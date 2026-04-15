@@ -42,3 +42,6 @@ Download HTML to PDF Module [here](https://docs.apryse.com/core/guides/info/modu
 
 Download Structured Output Module on the [Apryse Downloads page](https://dev.apryse.com/).
 
+## WebViewer Multiviewer Improvements
+
+[See alternative repo](https://github.com/clientProposal/testMultiViewerFromUpdates).
