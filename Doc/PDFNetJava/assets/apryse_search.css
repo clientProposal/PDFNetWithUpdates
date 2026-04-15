@@ -1,0 +1,7 @@
+/* Custom apryse search overrides */
+
+/* Turn the search bar into a button */
+#search_autocomplete {
+  cursor: pointer;
+  user-select: none;
+}

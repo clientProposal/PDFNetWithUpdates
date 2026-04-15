@@ -1,0 +1,3224 @@
+{
+    "Page": [
+        {
+            "num": 1,
+            "dpi": 116.363,
+            "origin": "TopLeft",
+            "Word": [
+                {
+                    "text": "HANDWRITING",
+                    "x": 184,
+                    "y": 81,
+                    "length": 105,
+                    "font-size": 14
+                },
+                {
+                    "text": "SAMPLE",
+                    "x": 299,
+                    "y": 81,
+                    "length": 52,
+                    "font-size": 14
+                },
+                {
+                    "text": "FORM",
+                    "x": 364,
+                    "y": 81,
+                    "length": 35,
+                    "font-size": 14
+                },
+                {
+                    "text": "STATE",
+                    "x": 428,
+                    "y": 115,
+                    "length": 28,
+                    "font-size": 9
+                },
+                {
+                    "text": "ZIP",
+                    "x": 475,
+                    "y": 115,
+                    "length": 11,
+                    "font-size": 9
+                },
+                {
+                    "text": "NAME",
+                    "x": 64,
+                    "y": 113,
+                    "length": 32,
+                    "font-size": 7
+                },
+                {
+                    "text": "DATE",
+                    "x": 221,
+                    "y": 115,
+                    "length": 31,
+                    "font-size": 9
+                },
+                {
+                    "text": "CITY",
+                    "x": 313,
+                    "y": 115,
+                    "length": 26,
+                    "font-size": 8
+                },
+                {
+                    "text": "SIERRA",
+                    "x": 310,
+                    "y": 135,
+                    "length": 60,
+                    "font-size": 15
+                },
+                {
+                    "text": "MADRE,CA 91024",
+                    "x": 384,
+                    "y": 135,
+                    "length": 150,
+                    "font-size": 15
+                },
+                {
+                    "text": "8/10/89",
+                    "x": 210,
+                    "y": 136,
+                    "length": 76,
+                    "font-size": 15
+                },
+                {
+                    "text": "This",
+                    "x": 69,
+                    "y": 155,
+                    "length": 14,
+                    "font-size": 11
+                },
+                {
+                    "text": "sample",
+                    "x": 89,
+                    "y": 155,
+                    "length": 28,
+                    "font-size": 11
+                },
+                {
+                    "text": "of",
+                    "x": 123,
+                    "y": 155,
+                    "length": 6,
+                    "font-size": 11
+                },
+                {
+                    "text": "writing",
+                    "x": 135,
+                    "y": 155,
+                    "length": 50,
+                    "font-size": 11
+                },
+                {
+                    "text": "is",
+                    "x": 191,
+                    "y": 155,
+                    "length": 6,
+                    "font-size": 11
+                },
+                {
+                    "text": "being",
+                    "x": 203,
+                    "y": 155,
+                    "length": 20,
+                    "font-size": 11
+                },
+                {
+                    "text": "collected",
+                    "x": 231,
+                    "y": 155,
+                    "length": 34,
+                    "font-size": 11
+                },
+                {
+                    "text": "for",
+                    "x": 271,
+                    "y": 155,
+                    "length": 10,
+                    "font-size": 11
+                },
+                {
+                    "text": "use",
+                    "x": 287,
+                    "y": 155,
+                    "length": 12,
+                    "font-size": 11
+                },
+                {
+                    "text": "in",
+                    "x": 305,
+                    "y": 155,
+                    "length": 4,
+                    "font-size": 11
+                },
+                {
+                    "text": "testing",
+                    "x": 317,
+                    "y": 155,
+                    "length": 26,
+                    "font-size": 11
+                },
+                {
+                    "text": "computer",
+                    "x": 351,
+                    "y": 155,
+                    "length": 38,
+                    "font-size": 11
+                },
+                {
+                    "text": "recognition",
+                    "x": 395,
+                    "y": 155,
+                    "length": 46,
+                    "font-size": 11
+                },
+                {
+                    "text": "of",
+                    "x": 449,
+                    "y": 155,
+                    "length": 4,
+                    "font-size": 11
+                },
+                {
+                    "text": "hand",
+                    "x": 461,
+                    "y": 155,
+                    "length": 18,
+                    "font-size": 11
+                },
+                {
+                    "text": "printed",
+                    "x": 485,
+                    "y": 155,
+                    "length": 28,
+                    "font-size": 11
+                },
+                {
+                    "text": "numbers",
+                    "x": 521,
+                    "y": 155,
+                    "length": 34,
+                    "font-size": 11
+                },
+                {
+                    "text": "and",
+                    "x": 51,
+                    "y": 167,
+                    "length": 12,
+                    "font-size": 9
+                },
+                {
+                    "text": "letters",
+                    "x": 70,
+                    "y": 167,
+                    "length": 25,
+                    "font-size": 9
+                },
+                {
+                    "text": ".",
+                    "x": 98,
+                    "y": 167,
+                    "length": 3,
+                    "font-size": 9
+                },
+                {
+                    "text": "Please",
+                    "x": 106,
+                    "y": 167,
+                    "length": 24,
+                    "font-size": 9
+                },
+                {
+                    "text": "print",
+                    "x": 136,
+                    "y": 167,
+                    "length": 19,
+                    "font-size": 9
+                },
+                {
+                    "text": "the",
+                    "x": 161,
+                    "y": 167,
+                    "length": 10,
+                    "font-size": 9
+                },
+                {
+                    "text": "following",
+                    "x": 178,
+                    "y": 167,
+                    "length": 37,
+                    "font-size": 9
+                },
+                {
+                    "text": "characters",
+                    "x": 221,
+                    "y": 167,
+                    "length": 40,
+                    "font-size": 9
+                },
+                {
+                    "text": "in",
+                    "x": 266,
+                    "y": 167,
+                    "length": 7,
+                    "font-size": 9
+                },
+                {
+                    "text": "the",
+                    "x": 280,
+                    "y": 167,
+                    "length": 10,
+                    "font-size": 9
+                },
+                {
+                    "text": "boxes",
+                    "x": 296,
+                    "y": 167,
+                    "length": 22,
+                    "font-size": 9
+                },
+                {
+                    "text": "that",
+                    "x": 323,
+                    "y": 167,
+                    "length": 17,
+                    "font-size": 9
+                },
+                {
+                    "text": "appear",
+                    "x": 346,
+                    "y": 167,
+                    "length": 27,
+                    "font-size": 9
+                },
+                {
+                    "text": "below",
+                    "x": 380,
+                    "y": 167,
+                    "length": 20,
+                    "font-size": 9
+                },
+                {
+                    "text": ".",
+                    "x": 403,
+                    "y": 167,
+                    "length": 2,
+                    "font-size": 9
+                },
+                {
+                    "text": "0123456789",
+                    "x": 389,
+                    "y": 177,
+                    "length": 82,
+                    "font-size": 10
+                },
+                {
+                    "text": "0123456789",
+                    "x": 67,
+                    "y": 178,
+                    "length": 83,
+                    "font-size": 9
+                },
+                {
+                    "text": "0123456789",
+                    "x": 228,
+                    "y": 177,
+                    "length": 107,
+                    "font-size": 9
+                },
+                {
+                    "text": "0",
+                    "x": 375,
+                    "y": 192,
+                    "length": 14,
+                    "font-size": 10
+                },
+                {
+                    "text": "0123456789",
+                    "x": 389,
+                    "y": 196,
+                    "length": 115,
+                    "font-size": 13
+                },
+                {
+                    "text": "0123456789",
+                    "x": 57,
+                    "y": 196,
+                    "length": 115,
+                    "font-size": 12
+                },
+                {
+                    "text": "0123456789",
+                    "x": 227,
+                    "y": 196,
+                    "length": 109,
+                    "font-size": 12
+                },
+                {
+                    "text": "161673",
+                    "x": 279,
+                    "y": 216,
+                    "length": 28,
+                    "font-size": 9
+                },
+                {
+                    "text": "290567",
+                    "x": 378,
+                    "y": 216,
+                    "length": 32,
+                    "font-size": 9
+                },
+                {
+                    "text": "9014",
+                    "x": 194,
+                    "y": 216,
+                    "length": 22,
+                    "font-size": 9
+                },
+                {
+                    "text": "08",
+                    "x": 66,
+                    "y": 216,
+                    "length": 10,
+                    "font-size": 7
+                },
+                {
+                    "text": "89",
+                    "x": 122,
+                    "y": 216,
+                    "length": 15,
+                    "font-size": 7
+                },
+                {
+                    "text": "89",
+                    "x": 112,
+                    "y": 235,
+                    "length": 32,
+                    "font-size": 12
+                },
+                {
+                    "text": "9014",
+                    "x": 189,
+                    "y": 235,
+                    "length": 41,
+                    "font-size": 12
+                },
+                {
+                    "text": "51673",
+                    "x": 276,
+                    "y": 235,
+                    "length": 54,
+                    "font-size": 12
+                },
+                {
+                    "text": "290567",
+                    "x": 386,
+                    "y": 235,
+                    "length": 81,
+                    "font-size": 12
+                },
+                {
+                    "text": "0",
+                    "x": 52,
+                    "y": 235,
+                    "length": 21,
+                    "font-size": 12
+                },
+                {
+                    "text": "350540",
+                    "x": 327,
+                    "y": 254,
+                    "length": 30,
+                    "font-size": 9
+                },
+                {
+                    "text": "34",
+                    "x": 493,
+                    "y": 253,
+                    "length": 11,
+                    "font-size": 8
+                },
+                {
+                    "text": "39",
+                    "x": 141,
+                    "y": 254,
+                    "length": 21,
+                    "font-size": 8
+                },
+                {
+                    "text": "9876",
+                    "x": 228,
+                    "y": 254,
+                    "length": 25,
+                    "font-size": 8
+                },
+                {
+                    "text": "39",
+                    "x": 69,
+                    "y": 254,
+                    "length": 15,
+                    "font-size": 7
+                },
+                {
+                    "text": "3500540",
+                    "x": 331,
+                    "y": 273,
+                    "length": 84,
+                    "font-size": 15
+                },
+                {
+                    "text": "96756",
+                    "x": 216,
+                    "y": 274,
+                    "length": 61,
+                    "font-size": 15
+                },
+                {
+                    "text": "34",
+                    "x": 480,
+                    "y": 273,
+                    "length": 24,
+                    "font-size": 14
+                },
+                {
+                    "text": "39",
+                    "x": 56,
+                    "y": 276,
+                    "length": 30,
+                    "font-size": 15
+                },
+                {
+                    "text": "3812",
+                    "x": 132,
+                    "y": 276,
+                    "length": 45,
+                    "font-size": 14
+                },
+                {
+                    "text": "87O",
+                    "x": 479,
+                    "y": 291,
+                    "length": 16,
+                    "font-size": 8
+                },
+                {
+                    "text": "3762",
+                    "x": 156,
+                    "y": 293,
+                    "length": 26,
+                    "font-size": 9
+                },
+                {
+                    "text": "155050",
+                    "x": 255,
+                    "y": 292,
+                    "length": 30,
+                    "font-size": 8
+                },
+                {
+                    "text": "84",
+                    "x": 418,
+                    "y": 291,
+                    "length": 10,
+                    "font-size": 7
+                },
+                {
+                    "text": "7791",
+                    "x": 68,
+                    "y": 293,
+                    "length": 21,
+                    "font-size": 8
+                },
+                {
+                    "text": "C",
+                    "x": 402,
+                    "y": 316,
+                    "length": 34,
+                    "font-size": 23
+                },
+                {
+                    "text": "84",
+                    "x": 410,
+                    "y": 311,
+                    "length": 25,
+                    "font-size": 15
+                },
+                {
+                    "text": "67O",
+                    "x": 471,
+                    "y": 311,
+                    "length": 35,
+                    "font-size": 15
+                },
+                {
+                    "text": "43762",
+                    "x": 146,
+                    "y": 311,
+                    "length": 64,
+                    "font-size": 13
+                },
+                {
+                    "text": "7791",
+                    "x": 63,
+                    "y": 314,
+                    "length": 40,
+                    "font-size": 14
+                },
+                {
+                    "text": "155050",
+                    "x": 256,
+                    "y": 311,
+                    "length": 85,
+                    "font-size": 12
+                },
+                {
+                    "text": "812231",
+                    "x": 166,
+                    "y": 331,
+                    "length": 32,
+                    "font-size": 9
+                },
+                {
+                    "text": "36",
+                    "x": 334,
+                    "y": 329,
+                    "length": 12,
+                    "font-size": 8
+                },
+                {
+                    "text": "734",
+                    "x": 394,
+                    "y": 329,
+                    "length": 16,
+                    "font-size": 8
+                },
+                {
+                    "text": "965",
+                    "x": 465,
+                    "y": 329,
+                    "length": 21,
+                    "font-size": 8
+                },
+                {
+                    "text": "2934",
+                    "x": 68,
+                    "y": 331,
+                    "length": 26,
+                    "font-size": 8
+                },
+                {
+                    "text": "734",
+                    "x": 385,
+                    "y": 350,
+                    "length": 34,
+                    "font-size": 14
+                },
+                {
+                    "text": "965/",
+                    "x": 459,
+                    "y": 350,
+                    "length": 45,
+                    "font-size": 15
+                },
+                {
+                    "text": "812231",
+                    "x": 176,
+                    "y": 349,
+                    "length": 84,
+                    "font-size": 13
+                },
+                {
+                    "text": "36",
+                    "x": 322,
+                    "y": 349,
+                    "length": 23,
+                    "font-size": 13
+                },
+                {
+                    "text": "2934",
+                    "x": 54,
+                    "y": 351,
+                    "length": 64,
+                    "font-size": 14
+                },
+                {
+                    "text": "42280",
+                    "x": 450,
+                    "y": 368,
+                    "length": 27,
+                    "font-size": 8
+                },
+                {
+                    "text": "27",
+                    "x": 236,
+                    "y": 368,
+                    "length": 11,
+                    "font-size": 8
+                },
+                {
+                    "text": "981150",
+                    "x": 68,
+                    "y": 370,
+                    "length": 31,
+                    "font-size": 9
+                },
+                {
+                    "text": "866",
+                    "x": 292,
+                    "y": 369,
+                    "length": 17,
+                    "font-size": 8
+                },
+                {
+                    "text": "8284",
+                    "x": 364,
+                    "y": 368,
+                    "length": 21,
+                    "font-size": 7
+                },
+                {
+                    "text": "981150",
+                    "x": 86,
+                    "y": 389,
+                    "length": 71,
+                    "font-size": 15
+                },
+                {
+                    "text": "87",
+                    "x": 221,
+                    "y": 389,
+                    "length": 25,
+                    "font-size": 15
+                },
+                {
+                    "text": "866",
+                    "x": 285,
+                    "y": 389,
+                    "length": 32,
+                    "font-size": 15
+                },
+                {
+                    "text": "8284",
+                    "x": 358,
+                    "y": 388,
+                    "length": 48,
+                    "font-size": 14
+                },
+                {
+                    "text": "42280",
+                    "x": 441,
+                    "y": 389,
+                    "length": 64,
+                    "font-size": 13
+                },
+                {
+                    "text": "bccumhtdslryawnjxoves",
+                    "x": 68,
+                    "y": 410,
+                    "length": 213,
+                    "font-size": 10
+                },
+                {
+                    "text": "Jhijxogvez",
+                    "x": 281,
+                    "y": 429,
+                    "length": 138,
+                    "font-size": 15
+                },
+                {
+                    "text": "bgcuumhtdslryawnjxoves",
+                    "x": 68,
+                    "y": 430,
+                    "length": 213,
+                    "font-size": 15
+                },
+                {
+                    "text": "QLDMOTGZJZWIAHFAHFAHKEPBYRNSNXVC",
+                    "x": 68,
+                    "y": 450,
+                    "length": 273,
+                    "font-size": 11
+                },
+                {
+                    "text": "QLDMOTGZWIAHFAHFAHKEPBYRNSVVC",
+                    "x": 62,
+                    "y": 473,
+                    "length": 426,
+                    "font-size": 19
+                },
+                {
+                    "text": "Please",
+                    "x": 56,
+                    "y": 490,
+                    "length": 21,
+                    "font-size": 9
+                },
+                {
+                    "text": "print",
+                    "x": 86,
+                    "y": 490,
+                    "length": 16,
+                    "font-size": 9
+                },
+                {
+                    "text": "the",
+                    "x": 109,
+                    "y": 490,
+                    "length": 12,
+                    "font-size": 9
+                },
+                {
+                    "text": "following",
+                    "x": 126,
+                    "y": 490,
+                    "length": 37,
+                    "font-size": 9
+                },
+                {
+                    "text": "text",
+                    "x": 169,
+                    "y": 490,
+                    "length": 15,
+                    "font-size": 9
+                },
+                {
+                    "text": "in",
+                    "x": 189,
+                    "y": 490,
+                    "length": 5,
+                    "font-size": 9
+                },
+                {
+                    "text": "the",
+                    "x": 201,
+                    "y": 490,
+                    "length": 12,
+                    "font-size": 9
+                },
+                {
+                    "text": "box",
+                    "x": 219,
+                    "y": 490,
+                    "length": 12,
+                    "font-size": 9
+                },
+                {
+                    "text": "below",
+                    "x": 239,
+                    "y": 490,
+                    "length": 19,
+                    "font-size": 9
+                },
+                {
+                    "text": ":",
+                    "x": 263,
+                    "y": 490,
+                    "length": 2,
+                    "font-size": 9
+                },
+                {
+                    "text": "We, the People of the United States, order to form a perfect Union, establish Justice, ensure",
+                    "x": 51,
+                    "y": 502,
+                    "length": 464,
+                    "font-size": 11
+                },
+                {
+                    "text": "domestic",
+                    "x": 523,
+                    "y": 502,
+                    "length": 34,
+                    "font-size": 11
+                },
+                {
+                    "text": "Tranguilty, provide for the common defense, promote the general Welfare,",
+                    "x": 51,
+                    "y": 514,
+                    "length": 338,
+                    "font-size": 11
+                },
+                {
+                    "text": "and",
+                    "x": 391,
+                    "y": 514,
+                    "length": 14,
+                    "font-size": 11
+                },
+                {
+                    "text": "secure",
+                    "x": 411,
+                    "y": 514,
+                    "length": 24,
+                    "font-size": 11
+                },
+                {
+                    "text": "the",
+                    "x": 441,
+                    "y": 514,
+                    "length": 12,
+                    "font-size": 11
+                },
+                {
+                    "text": "Blessings",
+                    "x": 461,
+                    "y": 514,
+                    "length": 36,
+                    "font-size": 11
+                },
+                {
+                    "text": "of",
+                    "x": 503,
+                    "y": 514,
+                    "length": 6,
+                    "font-size": 11
+                },
+                {
+                    "text": "Liberty",
+                    "x": 517,
+                    "y": 514,
+                    "length": 28,
+                    "font-size": 11
+                },
+                {
+                    "text": "to",
+                    "x": 551,
+                    "y": 514,
+                    "length": 6,
+                    "font-size": 11
+                },
+                {
+                    "text": "oureves and our posterity, do obtain this CONSTITUTION for the United States of America.",
+                    "x": 51,
+                    "y": 526,
+                    "length": 480,
+                    "font-size": 11
+                },
+                {
+                    "text": "We, the people of the United States, in order to form",
+                    "x": 57,
+                    "y": 564,
+                    "length": 491,
+                    "font-size": 22
+                },
+                {
+                    "text": "a",
+                    "x": 60,
+                    "y": 580,
+                    "length": 3,
+                    "font-size": 16
+                },
+                {
+                    "text": "more",
+                    "x": 72,
+                    "y": 580,
+                    "length": 39,
+                    "font-size": 16
+                },
+                {
+                    "text": "perfect Union, establish Justice, Insurance",
+                    "x": 129,
+                    "y": 580,
+                    "length": 372,
+                    "font-size": 16
+                },
+                {
+                    "text": "domestic",
+                    "x": 58,
+                    "y": 601,
+                    "length": 73,
+                    "font-size": 17
+                },
+                {
+                    "text": "Tranguility, provide por the ommoh",
+                    "x": 143,
+                    "y": 601,
+                    "length": 387,
+                    "font-size": 17
+                },
+                {
+                    "text": "....",
+                    "x": 250,
+                    "y": 605,
+                    "length": 30,
+                    "font-size": 5
+                },
+                {
+                    "text": "..",
+                    "x": 361,
+                    "y": 605,
+                    "length": 18,
+                    "font-size": 5
+                },
+                {
+                    "text": ".",
+                    "x": 188,
+                    "y": 605,
+                    "length": 13,
+                    "font-size": 4
+                },
+                {
+                    "text": "Depense, promote the general Welfare,",
+                    "x": 54,
+                    "y": 626,
+                    "length": 428,
+                    "font-size": 20
+                },
+                {
+                    "text": "and",
+                    "x": 490,
+                    "y": 626,
+                    "length": 25,
+                    "font-size": 20
+                },
+                {
+                    "text": "Secure the Blessings of Liberty to",
+                    "x": 52,
+                    "y": 650,
+                    "length": 376,
+                    "font-size": 20
+                },
+                {
+                    "text": "ourselves",
+                    "x": 446,
+                    "y": 650,
+                    "length": 88,
+                    "font-size": 20
+                },
+                {
+                    "text": "and our posterity, do ordain",
+                    "x": 52,
+                    "y": 671,
+                    "length": 308,
+                    "font-size": 23
+                },
+                {
+                    "text": "and",
+                    "x": 381,
+                    "y": 671,
+                    "length": 25,
+                    "font-size": 23
+                },
+                {
+                    "text": "establish",
+                    "x": 423,
+                    "y": 671,
+                    "length": 91,
+                    "font-size": 23
+                },
+                {
+                    "text": "this",
+                    "x": 56,
+                    "y": 694,
+                    "length": 33,
+                    "font-size": 25
+                },
+                {
+                    "text": "CONSTITUTION",
+                    "x": 117,
+                    "y": 694,
+                    "length": 139,
+                    "font-size": 25
+                },
+                {
+                    "text": "for",
+                    "x": 270,
+                    "y": 694,
+                    "length": 28,
+                    "font-size": 25
+                },
+                {
+                    "text": "the",
+                    "x": 312,
+                    "y": 694,
+                    "length": 28,
+                    "font-size": 25
+                },
+                {
+                    "text": "United",
+                    "x": 359,
+                    "y": 694,
+                    "length": 60,
+                    "font-size": 25
+                },
+                {
+                    "text": "States",
+                    "x": 447,
+                    "y": 694,
+                    "length": 70,
+                    "font-size": 25
+                },
+                {
+                    "text": "of",
+                    "x": 57,
+                    "y": 715,
+                    "length": 14,
+                    "font-size": 19
+                },
+                {
+                    "text": "America",
+                    "x": 92,
+                    "y": 715,
+                    "length": 81,
+                    "font-size": 19
+                },
+                {
+                    "text": ".",
+                    "x": 187,
+                    "y": 715,
+                    "length": 3,
+                    "font-size": 19
+                }
+            ]
+        },
+        {
+            "num": 2,
+            "dpi": 108.412,
+            "origin": "TopLeft",
+            "Word": [
+                {
+                    "text": "B06-053",
+                    "x": 450,
+                    "y": 61,
+                    "length": 60,
+                    "font-size": 11
+                },
+                {
+                    "text": "Sentence",
+                    "x": 87,
+                    "y": 63,
+                    "length": 56,
+                    "font-size": 12
+                },
+                {
+                    "text": "Database",
+                    "x": 154,
+                    "y": 63,
+                    "length": 58,
+                    "font-size": 12
+                },
+                {
+                    "text": "For",
+                    "x": 87,
+                    "y": 87,
+                    "length": 11,
+                    "font-size": 9
+                },
+                {
+                    "text": "we",
+                    "x": 108,
+                    "y": 87,
+                    "length": 9,
+                    "font-size": 9
+                },
+                {
+                    "text": "have",
+                    "x": 125,
+                    "y": 87,
+                    "length": 18,
+                    "font-size": 9
+                },
+                {
+                    "text": "always",
+                    "x": 152,
+                    "y": 87,
+                    "length": 28,
+                    "font-size": 9
+                },
+                {
+                    "text": "felt",
+                    "x": 188,
+                    "y": 87,
+                    "length": 14,
+                    "font-size": 9
+                },
+                {
+                    "text": ",",
+                    "x": 205,
+                    "y": 87,
+                    "length": 3,
+                    "font-size": 9
+                },
+                {
+                    "text": "even",
+                    "x": 213,
+                    "y": 87,
+                    "length": 17,
+                    "font-size": 9
+                },
+                {
+                    "text": "if",
+                    "x": 238,
+                    "y": 87,
+                    "length": 5,
+                    "font-size": 9
+                },
+                {
+                    "text": "we",
+                    "x": 252,
+                    "y": 87,
+                    "length": 8,
+                    "font-size": 9
+                },
+                {
+                    "text": "have",
+                    "x": 268,
+                    "y": 87,
+                    "length": 19,
+                    "font-size": 9
+                },
+                {
+                    "text": "then",
+                    "x": 295,
+                    "y": 87,
+                    "length": 18,
+                    "font-size": 9
+                },
+                {
+                    "text": "by",
+                    "x": 322,
+                    "y": 87,
+                    "length": 8,
+                    "font-size": 9
+                },
+                {
+                    "text": "our",
+                    "x": 338,
+                    "y": 87,
+                    "length": 14,
+                    "font-size": 9
+                },
+                {
+                    "text": "practice",
+                    "x": 360,
+                    "y": 87,
+                    "length": 37,
+                    "font-size": 9
+                },
+                {
+                    "text": "ignored",
+                    "x": 403,
+                    "y": 87,
+                    "length": 35,
+                    "font-size": 9
+                },
+                {
+                    "text": "it",
+                    "x": 445,
+                    "y": 87,
+                    "length": 5,
+                    "font-size": 9
+                },
+                {
+                    "text": ",",
+                    "x": 453,
+                    "y": 87,
+                    "length": 4,
+                    "font-size": 9
+                },
+                {
+                    "text": "the",
+                    "x": 460,
+                    "y": 87,
+                    "length": 13,
+                    "font-size": 9
+                },
+                {
+                    "text": "incon-",
+                    "x": 482,
+                    "y": 87,
+                    "length": 28,
+                    "font-size": 9
+                },
+                {
+                    "text": "sistency",
+                    "x": 85,
+                    "y": 99,
+                    "length": 37,
+                    "font-size": 10
+                },
+                {
+                    "text": "between",
+                    "x": 131,
+                    "y": 99,
+                    "length": 37,
+                    "font-size": 10
+                },
+                {
+                    "text": "support",
+                    "x": 177,
+                    "y": 99,
+                    "length": 37,
+                    "font-size": 10
+                },
+                {
+                    "text": "for",
+                    "x": 221,
+                    "y": 99,
+                    "length": 11,
+                    "font-size": 10
+                },
+                {
+                    "text": "the",
+                    "x": 240,
+                    "y": 99,
+                    "length": 12,
+                    "font-size": 10
+                },
+                {
+                    "text": "war",
+                    "x": 264,
+                    "y": 99,
+                    "length": 12,
+                    "font-size": 10
+                },
+                {
+                    "text": "alliance, with resulting cololose",
+                    "x": 286,
+                    "y": 99,
+                    "length": 158,
+                    "font-size": 10
+                },
+                {
+                    "text": "spending",
+                    "x": 451,
+                    "y": 99,
+                    "length": 42,
+                    "font-size": 10
+                },
+                {
+                    "text": "on",
+                    "x": 500,
+                    "y": 99,
+                    "length": 8,
+                    "font-size": 10
+                },
+                {
+                    "text": "armaments, and our basic effort to improve living standards. instead,",
+                    "x": 84,
+                    "y": 110,
+                    "length": 367,
+                    "font-size": 9
+                },
+                {
+                    "text": "we",
+                    "x": 457,
+                    "y": 110,
+                    "length": 9,
+                    "font-size": 9
+                },
+                {
+                    "text": "saw",
+                    "x": 474,
+                    "y": 110,
+                    "length": 13,
+                    "font-size": 9
+                },
+                {
+                    "text": "the",
+                    "x": 497,
+                    "y": 110,
+                    "length": 12,
+                    "font-size": 9
+                },
+                {
+                    "text": "Gaiskellities using the position of organizational dominant",
+                    "x": 84,
+                    "y": 123,
+                    "length": 301,
+                    "font-size": 10
+                },
+                {
+                    "text": "established",
+                    "x": 392,
+                    "y": 123,
+                    "length": 54,
+                    "font-size": 10
+                },
+                {
+                    "text": "during",
+                    "x": 453,
+                    "y": 123,
+                    "length": 29,
+                    "font-size": 10
+                },
+                {
+                    "text": "their",
+                    "x": 490,
+                    "y": 123,
+                    "length": 20,
+                    "font-size": 10
+                },
+                {
+                    "text": "years",
+                    "x": 87,
+                    "y": 135,
+                    "length": 22,
+                    "font-size": 10
+                },
+                {
+                    "text": "of",
+                    "x": 117,
+                    "y": 135,
+                    "length": 5,
+                    "font-size": 10
+                },
+                {
+                    "text": "control",
+                    "x": 129,
+                    "y": 135,
+                    "length": 33,
+                    "font-size": 10
+                },
+                {
+                    "text": "of",
+                    "x": 168,
+                    "y": 135,
+                    "length": 5,
+                    "font-size": 10
+                },
+                {
+                    "text": "policy",
+                    "x": 183,
+                    "y": 135,
+                    "length": 25,
+                    "font-size": 10
+                },
+                {
+                    "text": "to",
+                    "x": 214,
+                    "y": 135,
+                    "length": 7,
+                    "font-size": 10
+                },
+                {
+                    "text": "offend",
+                    "x": 229,
+                    "y": 135,
+                    "length": 27,
+                    "font-size": 10
+                },
+                {
+                    "text": "every",
+                    "x": 263,
+                    "y": 135,
+                    "length": 24,
+                    "font-size": 10
+                },
+                {
+                    "text": "principle",
+                    "x": 295,
+                    "y": 135,
+                    "length": 40,
+                    "font-size": 10
+                },
+                {
+                    "text": "of",
+                    "x": 342,
+                    "y": 135,
+                    "length": 6,
+                    "font-size": 10
+                },
+                {
+                    "text": "Democratic practice andunity.",
+                    "x": 355,
+                    "y": 135,
+                    "length": 153,
+                    "font-size": 10
+                },
+                {
+                    "text": "For",
+                    "x": 84,
+                    "y": 197,
+                    "length": 25,
+                    "font-size": 20
+                },
+                {
+                    "text": "we",
+                    "x": 142,
+                    "y": 197,
+                    "length": 22,
+                    "font-size": 20
+                },
+                {
+                    "text": "have",
+                    "x": 193,
+                    "y": 197,
+                    "length": 48,
+                    "font-size": 20
+                },
+                {
+                    "text": "always felt, even",
+                    "x": 267,
+                    "y": 197,
+                    "length": 223,
+                    "font-size": 20
+                },
+                {
+                    "text": "if",
+                    "x": 82,
+                    "y": 240,
+                    "length": 16,
+                    "font-size": 21
+                },
+                {
+                    "text": "we",
+                    "x": 125,
+                    "y": 240,
+                    "length": 19,
+                    "font-size": 21
+                },
+                {
+                    "text": "have",
+                    "x": 171,
+                    "y": 240,
+                    "length": 49,
+                    "font-size": 21
+                },
+                {
+                    "text": "then",
+                    "x": 243,
+                    "y": 240,
+                    "length": 43,
+                    "font-size": 21
+                },
+                {
+                    "text": "by",
+                    "x": 316,
+                    "y": 240,
+                    "length": 20,
+                    "font-size": 21
+                },
+                {
+                    "text": "our",
+                    "x": 359,
+                    "y": 240,
+                    "length": 34,
+                    "font-size": 21
+                },
+                {
+                    "text": "practice",
+                    "x": 412,
+                    "y": 240,
+                    "length": 81,
+                    "font-size": 21
+                },
+                {
+                    "text": "ignored",
+                    "x": 80,
+                    "y": 284,
+                    "length": 92,
+                    "font-size": 22
+                },
+                {
+                    "text": "it",
+                    "x": 192,
+                    "y": 284,
+                    "length": 16,
+                    "font-size": 22
+                },
+                {
+                    "text": ",",
+                    "x": 216,
+                    "y": 284,
+                    "length": 12,
+                    "font-size": 22
+                },
+                {
+                    "text": "the",
+                    "x": 240,
+                    "y": 284,
+                    "length": 28,
+                    "font-size": 22
+                },
+                {
+                    "text": "inconsistency",
+                    "x": 288,
+                    "y": 284,
+                    "length": 160,
+                    "font-size": 22
+                },
+                {
+                    "text": "between",
+                    "x": 80,
+                    "y": 326,
+                    "length": 88,
+                    "font-size": 21
+                },
+                {
+                    "text": "support",
+                    "x": 195,
+                    "y": 326,
+                    "length": 92,
+                    "font-size": 21
+                },
+                {
+                    "text": "for",
+                    "x": 314,
+                    "y": 326,
+                    "length": 27,
+                    "font-size": 21
+                },
+                {
+                    "text": "the",
+                    "x": 364,
+                    "y": 326,
+                    "length": 27,
+                    "font-size": 21
+                },
+                {
+                    "text": "war",
+                    "x": 417,
+                    "y": 326,
+                    "length": 35,
+                    "font-size": 21
+                },
+                {
+                    "text": "alliance, with resulting",
+                    "x": 75,
+                    "y": 369,
+                    "length": 298,
+                    "font-size": 20
+                },
+                {
+                    "text": "colossal",
+                    "x": 399,
+                    "y": 369,
+                    "length": 92,
+                    "font-size": 20
+                },
+                {
+                    "text": "spending",
+                    "x": 83,
+                    "y": 413,
+                    "length": 112,
+                    "font-size": 19
+                },
+                {
+                    "text": "on",
+                    "x": 223,
+                    "y": 413,
+                    "length": 18,
+                    "font-size": 19
+                },
+                {
+                    "text": "armaments, and our",
+                    "x": 265,
+                    "y": 413,
+                    "length": 252,
+                    "font-size": 19
+                },
+                {
+                    "text": "basic",
+                    "x": 86,
+                    "y": 456,
+                    "length": 54,
+                    "font-size": 21
+                },
+                {
+                    "text": "effort",
+                    "x": 171,
+                    "y": 456,
+                    "length": 61,
+                    "font-size": 21
+                },
+                {
+                    "text": "to",
+                    "x": 255,
+                    "y": 456,
+                    "length": 15,
+                    "font-size": 21
+                },
+                {
+                    "text": "improve",
+                    "x": 293,
+                    "y": 456,
+                    "length": 100,
+                    "font-size": 21
+                },
+                {
+                    "text": "livinge",
+                    "x": 420,
+                    "y": 456,
+                    "length": 73,
+                    "font-size": 21
+                },
+                {
+                    "text": "standards. Inkead,",
+                    "x": 79,
+                    "y": 499,
+                    "length": 245,
+                    "font-size": 23
+                },
+                {
+                    "text": "we",
+                    "x": 340,
+                    "y": 499,
+                    "length": 21,
+                    "font-size": 23
+                },
+                {
+                    "text": "saw",
+                    "x": 386,
+                    "y": 499,
+                    "length": 33,
+                    "font-size": 23
+                },
+                {
+                    "text": "the",
+                    "x": 444,
+                    "y": 499,
+                    "length": 25,
+                    "font-size": 23
+                },
+                {
+                    "text": "Gailskellikes using the position",
+                    "x": 77,
+                    "y": 542,
+                    "length": 415,
+                    "font-size": 22
+                },
+                {
+                    "text": "of",
+                    "x": 90,
+                    "y": 585,
+                    "length": 11,
+                    "font-size": 20
+                },
+                {
+                    "text": "organizational",
+                    "x": 130,
+                    "y": 585,
+                    "length": 173,
+                    "font-size": 20
+                },
+                {
+                    "text": "dominance",
+                    "x": 329,
+                    "y": 585,
+                    "length": 129,
+                    "font-size": 20
+                },
+                {
+                    "text": "established",
+                    "x": 88,
+                    "y": 627,
+                    "length": 143,
+                    "font-size": 20
+                },
+                {
+                    "text": "during",
+                    "x": 268,
+                    "y": 627,
+                    "length": 77,
+                    "font-size": 20
+                },
+                {
+                    "text": "their",
+                    "x": 367,
+                    "y": 627,
+                    "length": 52,
+                    "font-size": 20
+                },
+                {
+                    "text": "years",
+                    "x": 441,
+                    "y": 627,
+                    "length": 55,
+                    "font-size": 20
+                },
+                {
+                    "text": "Name:",
+                    "x": 86,
+                    "y": 683,
+                    "length": 34,
+                    "font-size": 7
+                },
+                {
+                    "text": "J.C.Ceus",
+                    "x": 126,
+                    "y": 731,
+                    "length": 169,
+                    "font-size": 48
+                },
+                {
+                    "text": "10",
+                    "x": 552,
+                    "y": 775,
+                    "length": 18,
+                    "font-size": 14
+                }
+            ]
+        },
+        {
+            "num": 3,
+            "dpi": 108.412,
+            "origin": "TopLeft",
+            "Word": [
+                {
+                    "text": "-",
+                    "x": 215,
+                    "y": 17,
+                    "length": 3,
+                    "font-size": 4
+                },
+                {
+                    "text": "Sentence",
+                    "x": 89,
+                    "y": 63,
+                    "length": 57,
+                    "font-size": 13
+                },
+                {
+                    "text": "Database",
+                    "x": 155,
+                    "y": 63,
+                    "length": 59,
+                    "font-size": 13
+                },
+                {
+                    "text": "E04-015",
+                    "x": 451,
+                    "y": 63,
+                    "length": 57,
+                    "font-size": 12
+                },
+                {
+                    "text": "Cut",
+                    "x": 88,
+                    "y": 87,
+                    "length": 15,
+                    "font-size": 10
+                },
+                {
+                    "text": "this",
+                    "x": 110,
+                    "y": 87,
+                    "length": 15,
+                    "font-size": 10
+                },
+                {
+                    "text": "piece",
+                    "x": 132,
+                    "y": 87,
+                    "length": 22,
+                    "font-size": 10
+                },
+                {
+                    "text": "of",
+                    "x": 162,
+                    "y": 87,
+                    "length": 7,
+                    "font-size": 10
+                },
+                {
+                    "text": "hardboard",
+                    "x": 175,
+                    "y": 87,
+                    "length": 47,
+                    "font-size": 10
+                },
+                {
+                    "text": "so",
+                    "x": 230,
+                    "y": 87,
+                    "length": 7,
+                    "font-size": 10
+                },
+                {
+                    "text": "that",
+                    "x": 244,
+                    "y": 87,
+                    "length": 19,
+                    "font-size": 10
+                },
+                {
+                    "text": "it's up against the front legs of the chair.",
+                    "x": 268,
+                    "y": 87,
+                    "length": 221,
+                    "font-size": 10
+                },
+                {
+                    "text": "The",
+                    "x": 494,
+                    "y": 87,
+                    "length": 15,
+                    "font-size": 10
+                },
+                {
+                    "text": "seat",
+                    "x": 87,
+                    "y": 100,
+                    "length": 16,
+                    "font-size": 11
+                },
+                {
+                    "text": "arms across the upper two cross pieces and is made of 1/2 in.",
+                    "x": 111,
+                    "y": 100,
+                    "length": 304,
+                    "font-size": 11
+                },
+                {
+                    "text": "plywood",
+                    "x": 419,
+                    "y": 100,
+                    "length": 38,
+                    "font-size": 11
+                },
+                {
+                    "text": "glued",
+                    "x": 465,
+                    "y": 100,
+                    "length": 22,
+                    "font-size": 11
+                },
+                {
+                    "text": "and",
+                    "x": 495,
+                    "y": 100,
+                    "length": 14,
+                    "font-size": 11
+                },
+                {
+                    "text": "panel",
+                    "x": 87,
+                    "y": 112,
+                    "length": 24,
+                    "font-size": 11
+                },
+                {
+                    "text": "PINned in position, measurements being taken directly from the work. Fig.",
+                    "x": 119,
+                    "y": 112,
+                    "length": 382,
+                    "font-size": 11
+                },
+                {
+                    "text": "4",
+                    "x": 507,
+                    "y": 112,
+                    "length": 2,
+                    "font-size": 11
+                },
+                {
+                    "text": "shows",
+                    "x": 87,
+                    "y": 124,
+                    "length": 26,
+                    "font-size": 11
+                },
+                {
+                    "text": "the",
+                    "x": 119,
+                    "y": 124,
+                    "length": 14,
+                    "font-size": 11
+                },
+                {
+                    "text": "framework",
+                    "x": 139,
+                    "y": 124,
+                    "length": 50,
+                    "font-size": 11
+                },
+                {
+                    "text": "for",
+                    "x": 197,
+                    "y": 124,
+                    "length": 12,
+                    "font-size": 11
+                },
+                {
+                    "text": "the",
+                    "x": 215,
+                    "y": 124,
+                    "length": 12,
+                    "font-size": 11
+                },
+                {
+                    "text": "back",
+                    "x": 235,
+                    "y": 124,
+                    "length": 18,
+                    "font-size": 11
+                },
+                {
+                    "text": "which",
+                    "x": 263,
+                    "y": 124,
+                    "length": 22,
+                    "font-size": 11
+                },
+                {
+                    "text": "is",
+                    "x": 293,
+                    "y": 124,
+                    "length": 6,
+                    "font-size": 11
+                },
+                {
+                    "text": "made",
+                    "x": 307,
+                    "y": 124,
+                    "length": 22,
+                    "font-size": 11
+                },
+                {
+                    "text": "from",
+                    "x": 335,
+                    "y": 124,
+                    "length": 18,
+                    "font-size": 11
+                },
+                {
+                    "text": "1/4 in 1/2 in. 1/2 in. Timber.",
+                    "x": 363,
+                    "y": 124,
+                    "length": 139,
+                    "font-size": 11
+                },
+                {
+                    "text": "Cut",
+                    "x": 89,
+                    "y": 206,
+                    "length": 27,
+                    "font-size": 29
+                },
+                {
+                    "text": "this",
+                    "x": 132,
+                    "y": 206,
+                    "length": 32,
+                    "font-size": 29
+                },
+                {
+                    "text": "piece",
+                    "x": 185,
+                    "y": 206,
+                    "length": 33,
+                    "font-size": 29
+                },
+                {
+                    "text": "of",
+                    "x": 244,
+                    "y": 206,
+                    "length": 17,
+                    "font-size": 29
+                },
+                {
+                    "text": "hardboard",
+                    "x": 282,
+                    "y": 206,
+                    "length": 91,
+                    "font-size": 29
+                },
+                {
+                    "text": "so",
+                    "x": 395,
+                    "y": 206,
+                    "length": 16,
+                    "font-size": 29
+                },
+                {
+                    "text": "that",
+                    "x": 427,
+                    "y": 206,
+                    "length": 37,
+                    "font-size": 29
+                },
+                {
+                    "text": "it",
+                    "x": 480,
+                    "y": 206,
+                    "length": 17,
+                    "font-size": 29
+                },
+                {
+                    "text": "fits",
+                    "x": 85,
+                    "y": 248,
+                    "length": 30,
+                    "font-size": 27
+                },
+                {
+                    "text": "up",
+                    "x": 140,
+                    "y": 248,
+                    "length": 15,
+                    "font-size": 27
+                },
+                {
+                    "text": "against",
+                    "x": 175,
+                    "y": 248,
+                    "length": 60,
+                    "font-size": 27
+                },
+                {
+                    "text": "the",
+                    "x": 255,
+                    "y": 248,
+                    "length": 25,
+                    "font-size": 27
+                },
+                {
+                    "text": "front",
+                    "x": 305,
+                    "y": 248,
+                    "length": 40,
+                    "font-size": 27
+                },
+                {
+                    "text": "legs",
+                    "x": 365,
+                    "y": 248,
+                    "length": 35,
+                    "font-size": 27
+                },
+                {
+                    "text": "of",
+                    "x": 420,
+                    "y": 248,
+                    "length": 15,
+                    "font-size": 27
+                },
+                {
+                    "text": "the",
+                    "x": 455,
+                    "y": 248,
+                    "length": 20,
+                    "font-size": 27
+                },
+                {
+                    "text": "J",
+                    "x": 382,
+                    "y": 256,
+                    "length": 7,
+                    "font-size": 6
+                },
+                {
+                    "text": "chair. The seat tests",
+                    "x": 87,
+                    "y": 291,
+                    "length": 206,
+                    "font-size": 24
+                },
+                {
+                    "text": "across",
+                    "x": 315,
+                    "y": 291,
+                    "length": 50,
+                    "font-size": 24
+                },
+                {
+                    "text": "the",
+                    "x": 382,
+                    "y": 291,
+                    "length": 18,
+                    "font-size": 24
+                },
+                {
+                    "text": "upper",
+                    "x": 418,
+                    "y": 291,
+                    "length": 41,
+                    "font-size": 24
+                },
+                {
+                    "text": "two",
+                    "x": 477,
+                    "y": 291,
+                    "length": 22,
+                    "font-size": 24
+                },
+                {
+                    "text": "-",
+                    "x": 426,
+                    "y": 312,
+                    "length": 4,
+                    "font-size": 6
+                },
+                {
+                    "text": "cross",
+                    "x": 87,
+                    "y": 335,
+                    "length": 42,
+                    "font-size": 21
+                },
+                {
+                    "text": "pieces",
+                    "x": 156,
+                    "y": 335,
+                    "length": 42,
+                    "font-size": 21
+                },
+                {
+                    "text": "and",
+                    "x": 225,
+                    "y": 335,
+                    "length": 27,
+                    "font-size": 21
+                },
+                {
+                    "text": "is",
+                    "x": 279,
+                    "y": 335,
+                    "length": 11,
+                    "font-size": 21
+                },
+                {
+                    "text": "made",
+                    "x": 310,
+                    "y": 335,
+                    "length": 42,
+                    "font-size": 21
+                },
+                {
+                    "text": "of",
+                    "x": 379,
+                    "y": 335,
+                    "length": 11,
+                    "font-size": 21
+                },
+                {
+                    "text": "1/2 in. plywood",
+                    "x": 417,
+                    "y": 335,
+                    "length": 116,
+                    "font-size": 21
+                },
+                {
+                    "text": "glued",
+                    "x": 86,
+                    "y": 379,
+                    "length": 38,
+                    "font-size": 25
+                },
+                {
+                    "text": "and",
+                    "x": 152,
+                    "y": 379,
+                    "length": 28,
+                    "font-size": 25
+                },
+                {
+                    "text": "panel",
+                    "x": 208,
+                    "y": 379,
+                    "length": 38,
+                    "font-size": 25
+                },
+                {
+                    "text": "pinned",
+                    "x": 265,
+                    "y": 379,
+                    "length": 51,
+                    "font-size": 25
+                },
+                {
+                    "text": "in",
+                    "x": 344,
+                    "y": 379,
+                    "length": 14,
+                    "font-size": 25
+                },
+                {
+                    "text": "position",
+                    "x": 382,
+                    "y": 379,
+                    "length": 66,
+                    "font-size": 25
+                },
+                {
+                    "text": ",",
+                    "x": 452,
+                    "y": 379,
+                    "length": 5,
+                    "font-size": 25
+                },
+                {
+                    "text": "measurements",
+                    "x": 462,
+                    "y": 379,
+                    "length": 108,
+                    "font-size": 25
+                },
+                {
+                    "text": "being",
+                    "x": 82,
+                    "y": 421,
+                    "length": 45,
+                    "font-size": 27
+                },
+                {
+                    "text": "taken",
+                    "x": 157,
+                    "y": 421,
+                    "length": 45,
+                    "font-size": 27
+                },
+                {
+                    "text": "directly",
+                    "x": 233,
+                    "y": 421,
+                    "length": 60,
+                    "font-size": 27
+                },
+                {
+                    "text": "from",
+                    "x": 318,
+                    "y": 421,
+                    "length": 35,
+                    "font-size": 27
+                },
+                {
+                    "text": "the",
+                    "x": 378,
+                    "y": 421,
+                    "length": 26,
+                    "font-size": 27
+                },
+                {
+                    "text": "work. Fig. 4",
+                    "x": 434,
+                    "y": 421,
+                    "length": 101,
+                    "font-size": 27
+                },
+                {
+                    "text": "shows",
+                    "x": 78,
+                    "y": 463,
+                    "length": 48,
+                    "font-size": 26
+                },
+                {
+                    "text": "the",
+                    "x": 150,
+                    "y": 463,
+                    "length": 24,
+                    "font-size": 26
+                },
+                {
+                    "text": "framework",
+                    "x": 193,
+                    "y": 463,
+                    "length": 92,
+                    "font-size": 26
+                },
+                {
+                    "text": "for",
+                    "x": 309,
+                    "y": 463,
+                    "length": 19,
+                    "font-size": 26
+                },
+                {
+                    "text": "the",
+                    "x": 352,
+                    "y": 463,
+                    "length": 24,
+                    "font-size": 26
+                },
+                {
+                    "text": "back",
+                    "x": 400,
+                    "y": 463,
+                    "length": 39,
+                    "font-size": 26
+                },
+                {
+                    "text": "which",
+                    "x": 458,
+                    "y": 463,
+                    "length": 44,
+                    "font-size": 26
+                },
+                {
+                    "text": "is",
+                    "x": 80,
+                    "y": 507,
+                    "length": 14,
+                    "font-size": 25
+                },
+                {
+                    "text": "made",
+                    "x": 117,
+                    "y": 507,
+                    "length": 42,
+                    "font-size": 25
+                },
+                {
+                    "text": "from",
+                    "x": 183,
+                    "y": 507,
+                    "length": 32,
+                    "font-size": 25
+                },
+                {
+                    "text": "1/4 in. by 1/2 in.",
+                    "x": 243,
+                    "y": 507,
+                    "length": 188,
+                    "font-size": 25
+                },
+                {
+                    "text": "timber",
+                    "x": 436,
+                    "y": 507,
+                    "length": 56,
+                    "font-size": 25
+                },
+                {
+                    "text": "Oswos Tiaras",
+                    "x": 115,
+                    "y": 674,
+                    "length": 199,
+                    "font-size": 27
+                },
+                {
+                    "text": "Name:",
+                    "x": 86,
+                    "y": 684,
+                    "length": 33,
+                    "font-size": 9
+                }
+            ]
+        },
+        {
+            "num": 4,
+            "dpi": 108.412,
+            "origin": "TopLeft",
+            "Word": [
+                {
+                    "text": "H07-037",
+                    "x": 447,
+                    "y": 62,
+                    "length": 60,
+                    "font-size": 12
+                },
+                {
+                    "text": "Sentence",
+                    "x": 84,
+                    "y": 64,
+                    "length": 56,
+                    "font-size": 13
+                },
+                {
+                    "text": "Database",
+                    "x": 152,
+                    "y": 64,
+                    "length": 56,
+                    "font-size": 13
+                },
+                {
+                    "text": "The",
+                    "x": 85,
+                    "y": 87,
+                    "length": 13,
+                    "font-size": 9
+                },
+                {
+                    "text": "establishment",
+                    "x": 106,
+                    "y": 87,
+                    "length": 65,
+                    "font-size": 9
+                },
+                {
+                    "text": "of",
+                    "x": 178,
+                    "y": 87,
+                    "length": 7,
+                    "font-size": 9
+                },
+                {
+                    "text": "open",
+                    "x": 191,
+                    "y": 87,
+                    "length": 20,
+                    "font-size": 9
+                },
+                {
+                    "text": "markets",
+                    "x": 220,
+                    "y": 87,
+                    "length": 35,
+                    "font-size": 9
+                },
+                {
+                    "text": "in",
+                    "x": 261,
+                    "y": 87,
+                    "length": 7,
+                    "font-size": 9
+                },
+                {
+                    "text": "the",
+                    "x": 275,
+                    "y": 87,
+                    "length": 13,
+                    "font-size": 9
+                },
+                {
+                    "text": "town",
+                    "x": 295,
+                    "y": 87,
+                    "length": 20,
+                    "font-size": 9
+                },
+                {
+                    "text": "centre",
+                    "x": 323,
+                    "y": 87,
+                    "length": 32,
+                    "font-size": 9
+                },
+                {
+                    "text": "has",
+                    "x": 363,
+                    "y": 87,
+                    "length": 12,
+                    "font-size": 9
+                },
+                {
+                    "text": "helped",
+                    "x": 383,
+                    "y": 87,
+                    "length": 28,
+                    "font-size": 9
+                },
+                {
+                    "text": "to",
+                    "x": 418,
+                    "y": 87,
+                    "length": 7,
+                    "font-size": 9
+                },
+                {
+                    "text": "bring",
+                    "x": 433,
+                    "y": 87,
+                    "length": 22,
+                    "font-size": 9
+                },
+                {
+                    "text": "custom",
+                    "x": 463,
+                    "y": 87,
+                    "length": 28,
+                    "font-size": 9
+                },
+                {
+                    "text": "to",
+                    "x": 501,
+                    "y": 87,
+                    "length": 7,
+                    "font-size": 9
+                },
+                {
+                    "text": "the",
+                    "x": 82,
+                    "y": 100,
+                    "length": 13,
+                    "font-size": 10
+                },
+                {
+                    "text": "shops",
+                    "x": 103,
+                    "y": 100,
+                    "length": 23,
+                    "font-size": 10
+                },
+                {
+                    "text": "and",
+                    "x": 134,
+                    "y": 100,
+                    "length": 13,
+                    "font-size": 10
+                },
+                {
+                    "text": "the",
+                    "x": 154,
+                    "y": 100,
+                    "length": 13,
+                    "font-size": 10
+                },
+                {
+                    "text": "initialears",
+                    "x": 174,
+                    "y": 100,
+                    "length": 54,
+                    "font-size": 10
+                },
+                {
+                    "text": "of",
+                    "x": 235,
+                    "y": 100,
+                    "length": 5,
+                    "font-size": 10
+                },
+                {
+                    "text": "some",
+                    "x": 246,
+                    "y": 100,
+                    "length": 22,
+                    "font-size": 10
+                },
+                {
+                    "text": "of",
+                    "x": 275,
+                    "y": 100,
+                    "length": 6,
+                    "font-size": 10
+                },
+                {
+                    "text": "the",
+                    "x": 286,
+                    "y": 100,
+                    "length": 13,
+                    "font-size": 10
+                },
+                {
+                    "text": "shopkeepers",
+                    "x": 307,
+                    "y": 100,
+                    "length": 56,
+                    "font-size": 10
+                },
+                {
+                    "text": "that",
+                    "x": 371,
+                    "y": 100,
+                    "length": 16,
+                    "font-size": 10
+                },
+                {
+                    "text": "their",
+                    "x": 395,
+                    "y": 100,
+                    "length": 22,
+                    "font-size": 10
+                },
+                {
+                    "text": "trade",
+                    "x": 422,
+                    "y": 100,
+                    "length": 24,
+                    "font-size": 10
+                },
+                {
+                    "text": "would",
+                    "x": 454,
+                    "y": 100,
+                    "length": 23,
+                    "font-size": 10
+                },
+                {
+                    "text": "suffer",
+                    "x": 485,
+                    "y": 100,
+                    "length": 26,
+                    "font-size": 10
+                },
+                {
+                    "text": "have",
+                    "x": 84,
+                    "y": 111,
+                    "length": 18,
+                    "font-size": 9
+                },
+                {
+                    "text": "approved unfounched.",
+                    "x": 111,
+                    "y": 111,
+                    "length": 93,
+                    "font-size": 9
+                },
+                {
+                    "text": "Shopping",
+                    "x": 211,
+                    "y": 111,
+                    "length": 41,
+                    "font-size": 9
+                },
+                {
+                    "text": "on",
+                    "x": 261,
+                    "y": 111,
+                    "length": 8,
+                    "font-size": 9
+                },
+                {
+                    "text": "two",
+                    "x": 277,
+                    "y": 111,
+                    "length": 14,
+                    "font-size": 9
+                },
+                {
+                    "text": "levels",
+                    "x": 299,
+                    "y": 111,
+                    "length": 23,
+                    "font-size": 9
+                },
+                {
+                    "text": "has",
+                    "x": 331,
+                    "y": 111,
+                    "length": 13,
+                    "font-size": 9
+                },
+                {
+                    "text": "been",
+                    "x": 352,
+                    "y": 111,
+                    "length": 19,
+                    "font-size": 9
+                },
+                {
+                    "text": "introduced",
+                    "x": 377,
+                    "y": 111,
+                    "length": 52,
+                    "font-size": 9
+                },
+                {
+                    "text": "in",
+                    "x": 436,
+                    "y": 111,
+                    "length": 6,
+                    "font-size": 9
+                },
+                {
+                    "text": "a",
+                    "x": 451,
+                    "y": 111,
+                    "length": 1,
+                    "font-size": 9
+                },
+                {
+                    "text": "number",
+                    "x": 461,
+                    "y": 111,
+                    "length": 35,
+                    "font-size": 9
+                },
+                {
+                    "text": "of",
+                    "x": 504,
+                    "y": 111,
+                    "length": 7,
+                    "font-size": 9
+                },
+                {
+                    "text": "towns",
+                    "x": 82,
+                    "y": 124,
+                    "length": 26,
+                    "font-size": 10
+                },
+                {
+                    "text": "and",
+                    "x": 115,
+                    "y": 124,
+                    "length": 15,
+                    "font-size": 10
+                },
+                {
+                    "text": "has",
+                    "x": 139,
+                    "y": 124,
+                    "length": 13,
+                    "font-size": 10
+                },
+                {
+                    "text": "added",
+                    "x": 157,
+                    "y": 124,
+                    "length": 28,
+                    "font-size": 10
+                },
+                {
+                    "text": "to",
+                    "x": 192,
+                    "y": 124,
+                    "length": 6,
+                    "font-size": 10
+                },
+                {
+                    "text": "the",
+                    "x": 205,
+                    "y": 124,
+                    "length": 13,
+                    "font-size": 10
+                },
+                {
+                    "text": "interest",
+                    "x": 225,
+                    "y": 124,
+                    "length": 35,
+                    "font-size": 10
+                },
+                {
+                    "text": "of",
+                    "x": 267,
+                    "y": 124,
+                    "length": 7,
+                    "font-size": 10
+                },
+                {
+                    "text": "the",
+                    "x": 280,
+                    "y": 124,
+                    "length": 13,
+                    "font-size": 10
+                },
+                {
+                    "text": "town",
+                    "x": 300,
+                    "y": 124,
+                    "length": 20,
+                    "font-size": 10
+                },
+                {
+                    "text": "centre",
+                    "x": 329,
+                    "y": 124,
+                    "length": 26,
+                    "font-size": 10
+                },
+                {
+                    "text": ".",
+                    "x": 359,
+                    "y": 124,
+                    "length": 2,
+                    "font-size": 10
+                },
+                {
+                    "text": "The",
+                    "x": 110,
+                    "y": 195,
+                    "length": 28,
+                    "font-size": 25
+                },
+                {
+                    "text": "establishment",
+                    "x": 161,
+                    "y": 195,
+                    "length": 160,
+                    "font-size": 25
+                },
+                {
+                    "text": "of",
+                    "x": 344,
+                    "y": 195,
+                    "length": 19,
+                    "font-size": 25
+                },
+                {
+                    "text": "open",
+                    "x": 381,
+                    "y": 195,
+                    "length": 43,
+                    "font-size": 25
+                },
+                {
+                    "text": "markets",
+                    "x": 447,
+                    "y": 195,
+                    "length": 80,
+                    "font-size": 25
+                },
+                {
+                    "text": "in",
+                    "x": 108,
+                    "y": 237,
+                    "length": 12,
+                    "font-size": 21
+                },
+                {
+                    "text": "the",
+                    "x": 139,
+                    "y": 237,
+                    "length": 23,
+                    "font-size": 21
+                },
+                {
+                    "text": "town",
+                    "x": 178,
+                    "y": 237,
+                    "length": 46,
+                    "font-size": 21
+                },
+                {
+                    "text": "centers",
+                    "x": 251,
+                    "y": 237,
+                    "length": 73,
+                    "font-size": 21
+                },
+                {
+                    "text": "has",
+                    "x": 347,
+                    "y": 237,
+                    "length": 27,
+                    "font-size": 21
+                },
+                {
+                    "text": "helped",
+                    "x": 389,
+                    "y": 237,
+                    "length": 65,
+                    "font-size": 21
+                },
+                {
+                    "text": "to",
+                    "x": 477,
+                    "y": 237,
+                    "length": 16,
+                    "font-size": 21
+                },
+                {
+                    "text": "bring",
+                    "x": 121,
+                    "y": 281,
+                    "length": 48,
+                    "font-size": 22
+                },
+                {
+                    "text": "custom",
+                    "x": 189,
+                    "y": 281,
+                    "length": 60,
+                    "font-size": 22
+                },
+                {
+                    "text": "to",
+                    "x": 277,
+                    "y": 281,
+                    "length": 16,
+                    "font-size": 22
+                },
+                {
+                    "text": "the",
+                    "x": 309,
+                    "y": 281,
+                    "length": 24,
+                    "font-size": 22
+                },
+                {
+                    "text": "shops",
+                    "x": 353,
+                    "y": 281,
+                    "length": 48,
+                    "font-size": 22
+                },
+                {
+                    "text": "and",
+                    "x": 425,
+                    "y": 281,
+                    "length": 36,
+                    "font-size": 22
+                },
+                {
+                    "text": "the",
+                    "x": 485,
+                    "y": 281,
+                    "length": 28,
+                    "font-size": 22
+                },
+                {
+                    "text": "Initial",
+                    "x": 115,
+                    "y": 326,
+                    "length": 73,
+                    "font-size": 23
+                },
+                {
+                    "text": "fear",
+                    "x": 214,
+                    "y": 326,
+                    "length": 39,
+                    "font-size": 23
+                },
+                {
+                    "text": "of",
+                    "x": 279,
+                    "y": 326,
+                    "length": 21,
+                    "font-size": 23
+                },
+                {
+                    "text": "some",
+                    "x": 318,
+                    "y": 326,
+                    "length": 47,
+                    "font-size": 23
+                },
+                {
+                    "text": "of",
+                    "x": 383,
+                    "y": 326,
+                    "length": 17,
+                    "font-size": 23
+                },
+                {
+                    "text": "the",
+                    "x": 417,
+                    "y": 326,
+                    "length": 26,
+                    "font-size": 23
+                },
+                {
+                    "text": "shopkeepers",
+                    "x": 124,
+                    "y": 368,
+                    "length": 135,
+                    "font-size": 23
+                },
+                {
+                    "text": "that",
+                    "x": 280,
+                    "y": 368,
+                    "length": 44,
+                    "font-size": 23
+                },
+                {
+                    "text": "their",
+                    "x": 341,
+                    "y": 368,
+                    "length": 48,
+                    "font-size": 23
+                },
+                {
+                    "text": "trade",
+                    "x": 406,
+                    "y": 368,
+                    "length": 56,
+                    "font-size": 23
+                },
+                {
+                    "text": "would",
+                    "x": 127,
+                    "y": 410,
+                    "length": 65,
+                    "font-size": 21
+                },
+                {
+                    "text": "suffer",
+                    "x": 215,
+                    "y": 410,
+                    "length": 54,
+                    "font-size": 21
+                },
+                {
+                    "text": "have",
+                    "x": 292,
+                    "y": 410,
+                    "length": 45,
+                    "font-size": 21
+                },
+                {
+                    "text": "approved un -",
+                    "x": 357,
+                    "y": 410,
+                    "length": 153,
+                    "font-size": 21
+                },
+                {
+                    "text": "1",
+                    "x": 235,
+                    "y": 415,
+                    "length": 5,
+                    "font-size": 3
+                },
+                {
+                    "text": "founded",
+                    "x": 126,
+                    "y": 453,
+                    "length": 92,
+                    "font-size": 23
+                },
+                {
+                    "text": ".",
+                    "x": 235,
+                    "y": 453,
+                    "length": 13,
+                    "font-size": 23
+                },
+                {
+                    "text": "Shopping",
+                    "x": 261,
+                    "y": 453,
+                    "length": 88,
+                    "font-size": 23
+                },
+                {
+                    "text": "on",
+                    "x": 366,
+                    "y": 453,
+                    "length": 18,
+                    "font-size": 23
+                },
+                {
+                    "text": "two",
+                    "x": 401,
+                    "y": 453,
+                    "length": 35,
+                    "font-size": 23
+                },
+                {
+                    "text": "levels",
+                    "x": 453,
+                    "y": 453,
+                    "length": 57,
+                    "font-size": 23
+                },
+                {
+                    "text": "has",
+                    "x": 126,
+                    "y": 494,
+                    "length": 31,
+                    "font-size": 19
+                },
+                {
+                    "text": "been",
+                    "x": 175,
+                    "y": 494,
+                    "length": 42,
+                    "font-size": 19
+                },
+                {
+                    "text": "introduced",
+                    "x": 241,
+                    "y": 494,
+                    "length": 112,
+                    "font-size": 19
+                },
+                {
+                    "text": "in",
+                    "x": 371,
+                    "y": 494,
+                    "length": 14,
+                    "font-size": 19
+                },
+                {
+                    "text": "a",
+                    "x": 406,
+                    "y": 494,
+                    "length": 3,
+                    "font-size": 19
+                },
+                {
+                    "text": "number",
+                    "x": 430,
+                    "y": 494,
+                    "length": 88,
+                    "font-size": 19
+                },
+                {
+                    "text": "of",
+                    "x": 125,
+                    "y": 539,
+                    "length": 16,
+                    "font-size": 22
+                },
+                {
+                    "text": "towns",
+                    "x": 169,
+                    "y": 539,
+                    "length": 60,
+                    "font-size": 22
+                },
+                {
+                    "text": "and",
+                    "x": 249,
+                    "y": 539,
+                    "length": 36,
+                    "font-size": 22
+                },
+                {
+                    "text": "has",
+                    "x": 313,
+                    "y": 539,
+                    "length": 32,
+                    "font-size": 22
+                },
+                {
+                    "text": "added",
+                    "x": 365,
+                    "y": 539,
+                    "length": 64,
+                    "font-size": 22
+                },
+                {
+                    "text": "to",
+                    "x": 449,
+                    "y": 539,
+                    "length": 16,
+                    "font-size": 22
+                },
+                {
+                    "text": "the",
+                    "x": 126,
+                    "y": 581,
+                    "length": 26,
+                    "font-size": 23
+                },
+                {
+                    "text": "interest",
+                    "x": 174,
+                    "y": 581,
+                    "length": 91,
+                    "font-size": 23
+                },
+                {
+                    "text": "of",
+                    "x": 287,
+                    "y": 581,
+                    "length": 17,
+                    "font-size": 23
+                },
+                {
+                    "text": "the",
+                    "x": 326,
+                    "y": 581,
+                    "length": 26,
+                    "font-size": 23
+                },
+                {
+                    "text": "town",
+                    "x": 374,
+                    "y": 581,
+                    "length": 48,
+                    "font-size": 23
+                },
+                {
+                    "text": "centre",
+                    "x": 448,
+                    "y": 581,
+                    "length": 65,
+                    "font-size": 23
+                },
+                {
+                    "text": "Name:",
+                    "x": 83,
+                    "y": 686,
+                    "length": 34,
+                    "font-size": 8
+                },
+                {
+                    "text": "farsfaren",
+                    "x": 133,
+                    "y": 726,
+                    "length": 134,
+                    "font-size": 32
+                }
+            ]
+        }
+    ]
+}
