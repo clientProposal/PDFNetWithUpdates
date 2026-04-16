@@ -30,6 +30,7 @@ THESE ARE THREE GROUPS OF SANITISABLE DATA.
 
 Types of sanitisable data you can choose in your opts, see below: 
 
+![the opts here](Samples/TestFiles/READMEImages/optsSanitisation.png).
 
 ## Getting MSG/EML Conversion Working
 
