@@ -49,7 +49,8 @@
 // StdSignatureHandler (a built-in SignatureHandler in PDFNet) to sign a PDF file.
 //----------------------------------------------------------------------------------------------------------------------
 
-import java.util.Locale;
+import java.util.*;
+import java.util.concurrent.*;
 import java.io.IOException;
 import com.pdftron.common.PDFNetException;
 import com.pdftron.pdf.annots.TextWidget;
@@ -81,97 +82,108 @@ import com.pdftron.crypto.ObjectIdentifier;
 import com.pdftron.pdf.TimestampingConfiguration;
 import com.pdftron.pdf.TimestampingResult;
 import com.pdftron.pdf.EmbeddedTimestampVerificationResult;
-public class DigitalSignaturesTest 
-{
-	public static boolean verifySimple(String in_docpath, String in_public_key_file_path) throws PDFNetException
-	{
+
+public class DigitalSignaturesTest {
+	public static boolean verifySimple(String in_docpath, String in_public_key_file_path) throws PDFNetException {
 		PDFDoc doc = new PDFDoc(in_docpath);
 		System.out.println("==========");
-		VerificationOptions opts = new VerificationOptions(VerificationOptions.SecurityLevel.e_compatibility_and_archiving);
+		VerificationOptions opts = new VerificationOptions(
+				VerificationOptions.SecurityLevel.e_compatibility_and_archiving);
 
-		// Add trust root to store of trusted certificates contained in VerificationOptions.
-		opts.addTrustedCertificate(in_public_key_file_path, 
-			VerificationOptions.CertificateTrustFlag.e_default_trust.value | VerificationOptions.CertificateTrustFlag.e_certification_trust.value);
+		// Add trust root to store of trusted certificates contained in
+		// VerificationOptions.
+		opts.addTrustedCertificate(in_public_key_file_path,
+				VerificationOptions.CertificateTrustFlag.e_default_trust.value
+						| VerificationOptions.CertificateTrustFlag.e_certification_trust.value);
 
 		PDFDoc.SignaturesVerificationStatus result = doc.verifySignedDigitalSignatures(opts);
-		
-		switch (result)
-		{
-		case e_unsigned:
-			System.out.println("Document has no signed signature fields.");
-			return false;
-			/*e_failure == bad doc status, digest status, or permissions status
-			(i.e. does not include trust issues, because those are flaky due to being network/config-related)*/
-		case e_failure:
-			System.out.println("Hard failure in verification on at least one signature.");
-			return false;
-		case e_untrusted:
-			System.out.println("Could not verify trust for at least one signature.");
-			return false;
-		case e_unsupported:
-			/*If necessary, call GetUnsupportedFeatures on VerificationResult to check which
-			unsupported features were encountered (requires verification using 'detailed' APIs) */
-			System.out.println("At least one signature contains unsupported features.");
-			return false;
-			// unsigned sigs skipped; parts of document may be unsigned (check GetByteRanges on signed sigs to find out)
-		case e_verified:
-			System.out.println("All signed signatures in document verified.");
-			return true;
-		default:
-			System.err.println("unrecognized document verification status");
-			assert(false);
+
+		switch (result) {
+			case e_unsigned:
+				System.out.println("Document has no signed signature fields.");
+				return false;
+			/*
+			 * e_failure == bad doc status, digest status, or permissions status
+			 * (i.e. does not include trust issues, because those are flaky due to being
+			 * network/config-related)
+			 */
+			case e_failure:
+				System.out.println("Hard failure in verification on at least one signature.");
+				return false;
+			case e_untrusted:
+				System.out.println("Could not verify trust for at least one signature.");
+				return false;
+			case e_unsupported:
+				/*
+				 * If necessary, call GetUnsupportedFeatures on VerificationResult to check
+				 * which
+				 * unsupported features were encountered (requires verification using 'detailed'
+				 * APIs)
+				 */
+				System.out.println("At least one signature contains unsupported features.");
+				return false;
+			// unsigned sigs skipped; parts of document may be unsigned (check GetByteRanges
+			// on signed sigs to find out)
+			case e_verified:
+				System.out.println("All signed signatures in document verified.");
+				return true;
+			default:
+				System.err.println("unrecognized document verification status");
+				assert (false);
 		}
 		return false;
 	}
 
-	public static boolean verifyAllAndPrint(String in_docpath, String in_public_key_file_path) throws PDFNetException
-	{
+	public static boolean verifyAllAndPrint(String in_docpath, String in_public_key_file_path) throws PDFNetException {
 		PDFDoc doc = new PDFDoc(in_docpath);
 		System.out.println("==========");
-		VerificationOptions opts = new VerificationOptions(VerificationOptions.SecurityLevel.e_compatibility_and_archiving);
+		VerificationOptions opts = new VerificationOptions(
+				VerificationOptions.SecurityLevel.e_compatibility_and_archiving);
 
-		// Add trust root to store of trusted certificates contained in VerificationOptions.
-		opts.addTrustedCertificate(in_public_key_file_path, 
-			VerificationOptions.CertificateTrustFlag.e_default_trust.value | VerificationOptions.CertificateTrustFlag.e_certification_trust.value);
+		// Add trust root to store of trusted certificates contained in
+		// VerificationOptions.
+		opts.addTrustedCertificate(in_public_key_file_path,
+				VerificationOptions.CertificateTrustFlag.e_default_trust.value
+						| VerificationOptions.CertificateTrustFlag.e_certification_trust.value);
 
-			// ** From Documentation **
-			// void addTrustedCertificate(String in_filepath, long in_trust_flags)
-			// Adds a certificate to the store of trusted certificates inside this options object, by loading it from a file.
+		// ** From Documentation **
+		// void addTrustedCertificate(String in_filepath, long in_trust_flags)
+		// Adds a certificate to the store of trusted certificates inside this options
+		// object, by loading it from a file.
 
-			// Parameters
-			// in_filepath	-- a path to a file containing the data of an X.509 public-key certificate encoded in binary DER (Distinguished Encoding Rules) format, or in PEM (appropriate Privacy-Enhanced Mail header+Base64 encoded DER+appropriate footer) format
-			// in_trust_flags	-- a combination of trust flags (see enum CertificateTrustFlag) that determine for which situations this certificate should be trusted during trust verification.
-			// Throws
-			// PDFNetException	
+		// Parameters
+		// in_filepath -- a path to a file containing the data of an X.509 public-key
+		// certificate encoded in binary DER (Distinguished Encoding Rules) format, or
+		// in PEM (appropriate Privacy-Enhanced Mail header+Base64 encoded
+		// DER+appropriate footer) format
+		// in_trust_flags -- a combination of trust flags (see enum
+		// CertificateTrustFlag) that determine for which situations this certificate
+		// should be trusted during trust verification.
+		// Throws
+		// PDFNetException
 
-			// flags, indicates valid for bitwise OR operation
-			// VerificationOptions.CertificateTrustFlag.e_default_trust.value
-			// 97
-			// VerificationOptions.CertificateTrustFlag.e_certification_trust.value
-			// 2
-			// 1100001 | 0000010 = 1100011, or 99
-			
+		// flags, indicates valid for bitwise OR operation
+		// VerificationOptions.CertificateTrustFlag.e_default_trust.value
+		// 97
+		// VerificationOptions.CertificateTrustFlag.e_certification_trust.value
+		// 2
+		// 1100001 | 0000010 = 1100011, or 99
 
 		// Iterate over the signatures and verify all of them.
 		DigitalSignatureFieldIterator digsig_fitr = doc.getDigitalSignatureFieldIterator();
 		boolean verification_status = true;
-		for (; digsig_fitr.hasNext(); )
-		{
+		for (; digsig_fitr.hasNext();) {
 			DigitalSignatureField curr = digsig_fitr.next();
 			VerificationResult result = curr.verify(opts);
-			if (result.getVerificationStatus())
-			{
+			if (result.getVerificationStatus()) {
 				System.out.print("Signature verified, ");
-			}
-			else
-			{
+			} else {
 				System.out.print("Signature verification failed, ");
 				verification_status = false;
 			}
 			System.out.println(String.format(Locale.US, "objnum: %d", curr.getSDFObj().getObjNum()));
 
-			switch (result.getDigestAlgorithm())
-			{
+			switch (result.getDigestAlgorithm()) {
 				case e_sha1:
 					System.out.println("Digest algorithm: SHA-1");
 					break;
@@ -192,90 +204,84 @@ public class DigitalSignaturesTest
 					break;
 				default:
 					System.err.println("unrecognized digest algorithm");
-					assert(false);
+					assert (false);
 			}
-			System.out.println(String.format("Detailed verification result: \n\t%s\n\t%s\n\t%s\n\t%s", 
-				result.getDocumentStatusAsString(),
-				result.getDigestStatusAsString(),
-				result.getTrustStatusAsString(),
-				result.getPermissionsStatusAsString()));
-
+			System.out.println(String.format("Detailed verification result: \n\t%s\n\t%s\n\t%s\n\t%s",
+					result.getDocumentStatusAsString(),
+					result.getDigestStatusAsString(),
+					result.getTrustStatusAsString(),
+					result.getPermissionsStatusAsString()));
 
 			DisallowedChange[] changes = result.getDisallowedChanges();
-			for (DisallowedChange it2 : changes)
-			{
-				System.out.println(String.format(Locale.US, "\tDisallowed change: %s, objnum: %d", it2.getTypeAsString(), it2.getObjNum()));
+			for (DisallowedChange it2 : changes) {
+				System.out.println(String.format(Locale.US, "\tDisallowed change: %s, objnum: %d",
+						it2.getTypeAsString(), it2.getObjNum()));
 			}
 
 			// Get and print all the detailed trust-related results, if they are available.
-			if (result.hasTrustVerificationResult())
-			{
+			if (result.hasTrustVerificationResult()) {
 				TrustVerificationResult trust_verification_result = result.getTrustVerificationResult();
-				System.out.println(trust_verification_result.wasSuccessful() ? "Trust verified." : "Trust not verifiable.");
+				System.out.println(
+						trust_verification_result.wasSuccessful() ? "Trust verified." : "Trust not verifiable.");
 				System.out.println(trust_verification_result.getResultString());
 
 				long time_of_verification = trust_verification_result.getTimeOfTrustVerification();
-				switch (trust_verification_result.getTimeOfTrustVerificationEnum())
-				{
+				switch (trust_verification_result.getTimeOfTrustVerificationEnum()) {
 					case e_current:
-						System.out.println(String.format(Locale.US, "Trust verification attempted with respect to current time (as epoch time): %d", time_of_verification));
+						System.out.println(String.format(Locale.US,
+								"Trust verification attempted with respect to current time (as epoch time): %d",
+								time_of_verification));
 						break;
 					case e_signing:
-						System.out.println(String.format(Locale.US, "Trust verification attempted with respect to signing time (as epoch time): %d", time_of_verification));
+						System.out.println(String.format(Locale.US,
+								"Trust verification attempted with respect to signing time (as epoch time): %d",
+								time_of_verification));
 						break;
 					case e_timestamp:
-						System.out.println(String.format(Locale.US, "Trust verification attempted with respect to secure embedded timestamp (as epoch time): %d", time_of_verification));
+						System.out.println(String.format(Locale.US,
+								"Trust verification attempted with respect to secure embedded timestamp (as epoch time): %d",
+								time_of_verification));
 						break;
 					default:
 						System.err.println("unrecognized time enum value");
-						assert(false);
+						assert (false);
 				}
 
-				if(trust_verification_result.getCertPath().length == 0 )
-				{
+				if (trust_verification_result.getCertPath().length == 0) {
 					System.out.println("Could not print certificate path.");
-				}
-				else
-				{
+				} else {
 					System.out.println("Certificate path:");
 					X509Certificate[] cert_path = trust_verification_result.getCertPath();
-					for (int j = 0; j < cert_path.length; j++)
-					{
-						System.out.println("\tCertificate:"); 
+					for (int j = 0; j < cert_path.length; j++) {
+						System.out.println("\tCertificate:");
 						X509Certificate full_cert = cert_path[j];
 						System.out.println("\t\tIssuer names:");
 
-						X501AttributeTypeAndValue[] issuer_dn  = full_cert.getIssuerField().getAllAttributesAndValues();
-						for (int i = 0; i < issuer_dn.length; i++)
-						{
+						X501AttributeTypeAndValue[] issuer_dn = full_cert.getIssuerField().getAllAttributesAndValues();
+						for (int i = 0; i < issuer_dn.length; i++) {
 							System.out.println("\t\t\t" + issuer_dn[i].getStringValue());
 						}
 						System.out.println("\t\tSubject names:");
-						X501AttributeTypeAndValue[] subject_dn = full_cert.getSubjectField().getAllAttributesAndValues();
-						for (int i = 0; i < subject_dn.length; i++)
-						{
+						X501AttributeTypeAndValue[] subject_dn = full_cert.getSubjectField()
+								.getAllAttributesAndValues();
+						for (int i = 0; i < subject_dn.length; i++) {
 							System.out.println("\t\t\t" + subject_dn[i].getStringValue());
 						}
 						System.out.println("\t\tExtensions:");
-						for (int i = 0; i < full_cert.getExtensions().length; i++)
-						{
+						for (int i = 0; i < full_cert.getExtensions().length; i++) {
 							System.out.println("\t\t\t" + full_cert.getExtensions()[i].toString());
 						}
 					}
 				}
-			}
-			else
-			{
+			} else {
 				System.out.println("No detailed trust verification result available.");
 			}
 
 			String[] unsupported_features = result.getUnsupportedFeatures();
-			if (unsupported_features.length > 0)
-			{
+			if (unsupported_features.length > 0) {
 				System.out.println("Unsupported features:");
 
-				for (String unsupported_feature : unsupported_features)
-				{
+				for (String unsupported_feature : unsupported_features) {
 					System.out.println("\t" + unsupported_feature);
 				}
 			}
@@ -284,26 +290,22 @@ public class DigitalSignaturesTest
 
 		return verification_status;
 	}
-	
+
 	public static void certifyPDF(String in_docpath,
-		String in_cert_field_name,
-		String in_private_key_file_path,
-		String in_keyfile_password,
-		String in_appearance_image_path,
-		String in_outpath) throws PDFNetException
-	{
+			String in_cert_field_name,
+			String in_private_key_file_path,
+			String in_keyfile_password,
+			String in_appearance_image_path,
+			String in_outpath) throws PDFNetException {
 		System.out.println("================================================================================");
 		System.out.println("Certifying PDF document");
 
 		// Open an existing PDF
 		PDFDoc doc = new PDFDoc(in_docpath);
 
-		if (doc.hasSignatures())
-		{
+		if (doc.hasSignatures()) {
 			System.out.println("PDFDoc has signatures");
-		}
-		else
-		{
+		} else {
 			System.out.println("PDFDoc has no signatures");
 		}
 
@@ -313,47 +315,56 @@ public class DigitalSignaturesTest
 		TextWidget annot1 = TextWidget.create(doc, new Rect(143, 440, 350, 460), "asdf_test_field");
 		page1.annotPushBack(annot1);
 
-		/* Create a new signature form field in the PDFDoc. The name argument is optional;
-		leaving it empty causes it to be auto-generated. However, you may need the name for later.
-		Acrobat doesn't show digsigfield in side panel if it's without a widget. Using a
-		Rect with 0 width and 0 height, or setting the NoPrint/Invisible flags makes it invisible. */
+		/*
+		 * Create a new signature form field in the PDFDoc. The name argument is
+		 * optional;
+		 * leaving it empty causes it to be auto-generated. However, you may need the
+		 * name for later.
+		 * Acrobat doesn't show digsigfield in side panel if it's without a widget.
+		 * Using a
+		 * Rect with 0 width and 0 height, or setting the NoPrint/Invisible flags makes
+		 * it invisible.
+		 */
 		DigitalSignatureField certification_sig_field = doc.createDigitalSignatureField(in_cert_field_name);
-		SignatureWidget widgetAnnot = SignatureWidget.create(doc, new Rect(143, 287, 219, 306), certification_sig_field);
+		SignatureWidget widgetAnnot = SignatureWidget.create(doc, new Rect(143, 287, 219, 306),
+				certification_sig_field);
 		page1.annotPushBack(widgetAnnot);
 
 		// (OPTIONAL) Add an appearance to the signature field.
 		Image img = Image.create(doc, in_appearance_image_path);
 		widgetAnnot.createSignatureAppearance(img);
 
-		// Prepare the document locking permission level. It will be applied upon document certification.
+		// Prepare the document locking permission level. It will be applied upon
+		// document certification.
 		System.out.println("Adding document permissions.");
-		certification_sig_field.setDocumentPermissions(DigitalSignatureField.DocumentPermissions.e_annotating_formfilling_signing_allowed);
-		
+		certification_sig_field.setDocumentPermissions(
+				DigitalSignatureField.DocumentPermissions.e_annotating_formfilling_signing_allowed);
+
 		// Prepare to lock the text field that we created earlier.
 		System.out.println("Adding field permissions.");
-		String[] fields_to_lock = {"asdf_test_field"};
+		String[] fields_to_lock = { "asdf_test_field" };
 		certification_sig_field.setFieldPermissions(DigitalSignatureField.FieldPermissions.e_include, fields_to_lock);
 
 		certification_sig_field.certifyOnNextSave(in_private_key_file_path, in_keyfile_password);
-		
+
 		// (OPTIONAL) Add more information to the signature dictionary.
 		certification_sig_field.setLocation("Vancouver, BC");
 		certification_sig_field.setReason("Document certification.");
 		certification_sig_field.setContactInfo("www.pdftron.com");
 
-		// Save the PDFDoc. Once the method below is called, PDFNet will also sign the document using the information provided.
+		// Save the PDFDoc. Once the method below is called, PDFNet will also sign the
+		// document using the information provided.
 		doc.save(in_outpath, SDFDoc.SaveMode.NO_FLAGS, null);
 
 		System.out.println("================================================================================");
 	}
 
 	public static void signPDF(String in_docpath,
-		String in_approval_field_name,
-		String in_private_key_file_path,
-		String in_keyfile_password,
-		String in_appearance_img_path,
-		String in_outpath) throws PDFNetException
-	{
+			String in_approval_field_name,
+			String in_private_key_file_path,
+			String in_keyfile_password,
+			String in_appearance_img_path,
+			String in_outpath) throws PDFNetException {
 		System.out.println("================================================================================");
 		System.out.println("Signing PDF document");
 
@@ -363,7 +374,7 @@ public class DigitalSignaturesTest
 		// Retrieve the unsigned approval signature field.
 		Field found_approval_field = doc.getField(in_approval_field_name);
 		DigitalSignatureField found_approval_signature_digsig_field = new DigitalSignatureField(found_approval_field);
-		
+
 		// (OPTIONAL) Add an appearance to the signature field.
 		Image img = Image.create(doc, in_appearance_img_path);
 		SignatureWidget found_approval_signature_widget = new SignatureWidget(found_approval_field.getSDFObj());
@@ -372,64 +383,55 @@ public class DigitalSignaturesTest
 		// Prepare the signature and signature handler for signing.
 		found_approval_signature_digsig_field.signOnNextSave(in_private_key_file_path, in_keyfile_password);
 
-		// The actual approval signing will be done during the following incremental save operation.
+		// The actual approval signing will be done during the following incremental
+		// save operation.
 		doc.save(in_outpath, SDFDoc.SaveMode.INCREMENTAL, null);
 
 		System.out.println("================================================================================");
 	}
 
 	public static void clearSignature(String in_docpath,
-		String in_digsig_field_name,
-		String in_outpath) throws PDFNetException
-	{
+			String in_digsig_field_name,
+			String in_outpath) throws PDFNetException {
 		System.out.println("================================================================================");
 		System.out.println("Clearing certification signature");
 
 		PDFDoc doc = new PDFDoc(in_docpath);
 
 		DigitalSignatureField digsig = new DigitalSignatureField(doc.getField(in_digsig_field_name));
-		
+
 		System.out.println("Clearing signature: " + in_digsig_field_name);
 		digsig.clearSignature();
 
-		if (!digsig.hasCryptographicSignature())
-		{
+		if (!digsig.hasCryptographicSignature()) {
 			System.out.println("Cryptographic signature cleared properly.");
 		}
 
-		// Save incrementally so as to not invalidate other signatures from previous saves.
+		// Save incrementally so as to not invalidate other signatures from previous
+		// saves.
 		doc.save(in_outpath, SDFDoc.SaveMode.INCREMENTAL, null);
 
 		System.out.println("================================================================================");
 	}
 
-	public static void printSignaturesInfo(String in_docpath) throws PDFNetException
-	{
+	public static void printSignaturesInfo(String in_docpath) throws PDFNetException {
 		System.out.println("================================================================================");
 		System.out.println("Reading and printing digital signature information");
 
 		PDFDoc doc = new PDFDoc(in_docpath);
-		if (!doc.hasSignatures())
-		{
+		if (!doc.hasSignatures()) {
 			System.out.println("Doc has no signatures.");
 			System.out.println("================================================================================");
 			return;
-		}
-		else
-		{
+		} else {
 			System.out.println("Doc has signatures.");
 		}
 
-		
-		for (FieldIterator fitr = doc.getFieldIterator(); fitr.hasNext(); )
-		{
+		for (FieldIterator fitr = doc.getFieldIterator(); fitr.hasNext();) {
 			Field current = fitr.next();
-			if (current.isLockedByDigitalSignature())
-			{
+			if (current.isLockedByDigitalSignature()) {
 				System.out.println("==========\nField locked by a digital signature");
-			}
-			else
-			{
+			} else {
 				System.out.println("==========\nField not locked by a digital signature");
 			}
 
@@ -440,26 +442,23 @@ public class DigitalSignaturesTest
 		System.out.println("====================\nNow iterating over digital signatures only.\n====================");
 
 		DigitalSignatureFieldIterator digsig_fitr = doc.getDigitalSignatureFieldIterator();
-		for (; digsig_fitr.hasNext(); )
-		{
+		for (; digsig_fitr.hasNext();) {
 			DigitalSignatureField current = digsig_fitr.next();
 			System.out.println("==========");
 			System.out.println("Field name of digital signature: " + new Field(current.getSDFObj()).getName());
 
 			DigitalSignatureField digsigfield = current;
-			if (!digsigfield.hasCryptographicSignature())
-			{
+			if (!digsigfield.hasCryptographicSignature()) {
 				System.out.println("Either digital signature field lacks a digital signature dictionary, " +
-					"or digital signature dictionary lacks a cryptographic Contents entry. " +
-					"Digital signature field is not presently considered signed.\n" +
-					"==========");
+						"or digital signature dictionary lacks a cryptographic Contents entry. " +
+						"Digital signature field is not presently considered signed.\n" +
+						"==========");
 				continue;
 			}
 
 			int cert_count = digsigfield.getCertCount();
 			System.out.println("Cert count: " + cert_count);
-			for (int i = 0; i < cert_count; ++i)
-			{
+			for (int i = 0; i < cert_count; ++i) {
 				byte[] cert = digsigfield.getCert(i);
 				System.out.println("Cert #" + i + " size: " + cert.length);
 			}
@@ -467,59 +466,54 @@ public class DigitalSignaturesTest
 			DigitalSignatureField.SubFilterType subfilter = digsigfield.getSubFilter();
 
 			System.out.println("Subfilter type: " + subfilter.ordinal());
-			// e_ETSI_RFC3161 is the timestamp field. If it is present, we know that the field was signed. 
-			if (subfilter != DigitalSignatureField.SubFilterType.e_ETSI_RFC3161)
-			{
+			// e_ETSI_RFC3161 is the timestamp field. If it is present, we know that the
+			// field was signed.
+			if (subfilter != DigitalSignatureField.SubFilterType.e_ETSI_RFC3161) {
 				System.out.println("Signature's signer: " + digsigfield.getSignatureName());
 
 				Date signing_time = digsigfield.getSigningTime();
-				if (signing_time.isValid())
-				{
+				if (signing_time.isValid()) {
 					System.out.println("Signing time is valid.");
 				}
 
 				System.out.println("Location: " + digsigfield.getLocation());
 				System.out.println("Reason: " + digsigfield.getReason());
 				System.out.println("Contact info: " + digsigfield.getContactInfo());
-			}
-			else
-			{
+			} else {
 				System.out.println("SubFilter == e_ETSI_RFC3161 (DocTimeStamp; no signing info)");
 			}
 
-			if (digsigfield.hasVisibleAppearance())
-			{
+			if (digsigfield.hasVisibleAppearance()) {
 				System.out.println("Visible");
-			}
-			else
-			{
+			} else {
 				System.out.println("Not visible");
 			}
-			
+
 			DigitalSignatureField.DocumentPermissions digsig_doc_perms = digsigfield.getDocumentPermissions();
 			String[] locked_fields = digsigfield.getLockedFields();
-			for (String it : locked_fields)
-			{
+			for (String it : locked_fields) {
 				System.out.println("This digital signature locks a field named: " + it);
 			}
 
-			switch (digsig_doc_perms)
-			{
-			case e_no_changes_allowed:
-				System.out.println("No changes to the document can be made without invalidating this digital signature.");
-				break;
-			case e_formfilling_signing_allowed:
-				System.out.println("Page template instantiation, form filling, and signing digital signatures are allowed without invalidating this digital signature.");
-				break;
-			case e_annotating_formfilling_signing_allowed:
-				System.out.println("Annotating, page template instantiation, form filling, and signing digital signatures are allowed without invalidating this digital signature.");
-				break;
-			case e_unrestricted:
-				System.out.println("Document not restricted by this digital signature.");
-				break;
-			default:
-				System.err.println("Unrecognized digital signature document permission level.");
-				assert(false);
+			switch (digsig_doc_perms) {
+				case e_no_changes_allowed:
+					System.out.println(
+							"No changes to the document can be made without invalidating this digital signature.");
+					break;
+				case e_formfilling_signing_allowed:
+					System.out.println(
+							"Page template instantiation, form filling, and signing digital signatures are allowed without invalidating this digital signature.");
+					break;
+				case e_annotating_formfilling_signing_allowed:
+					System.out.println(
+							"Annotating, page template instantiation, form filling, and signing digital signatures are allowed without invalidating this digital signature.");
+					break;
+				case e_unrestricted:
+					System.out.println("Document not restricted by this digital signature.");
+					break;
+				default:
+					System.err.println("Unrecognized digital signature document permission level.");
+					assert (false);
 			}
 			System.out.println("==========");
 		}
@@ -528,15 +522,14 @@ public class DigitalSignaturesTest
 	}
 
 	public static void CustomSigningAPI(String doc_path,
-		String cert_field_name,
-		String private_key_file_path,
-		String keyfile_password,
-		String public_key_file_path,
-		String appearance_image_path,
-		DigestAlgorithm digest_algorithm_type,
-		boolean PAdES_signing_mode,
-		String output_path) throws PDFNetException, IOException
-	{
+			String cert_field_name,
+			String private_key_file_path,
+			String keyfile_password,
+			String public_key_file_path,
+			String appearance_image_path,
+			DigestAlgorithm digest_algorithm_type,
+			boolean PAdES_signing_mode,
+			String output_path) throws PDFNetException, IOException {
 		System.out.println("================================================================================");
 		System.out.println("Custom signing PDF document");
 
@@ -552,57 +545,77 @@ public class DigitalSignaturesTest
 		Image img = Image.create(doc, appearance_image_path);
 		widgetAnnot.createSignatureAppearance(img);
 
-		// Create a digital signature dictionary inside the digital signature field, in preparation for signing.
+		// Create a digital signature dictionary inside the digital signature field, in
+		// preparation for signing.
 		digsig_field.createSigDictForCustomSigning("Adobe.PPKLite",
-			PAdES_signing_mode ? DigitalSignatureField.SubFilterType.e_ETSI_CAdES_detached : DigitalSignatureField.SubFilterType.e_adbe_pkcs7_detached,
-			7500); // For security reasons, set the contents size to a value greater than but as close as possible to the size you expect your final signature to be, in bytes.
-				   // ... or, if you want to apply a certification signature, use CreateSigDictForCustomCertification instead.
+				PAdES_signing_mode ? DigitalSignatureField.SubFilterType.e_ETSI_CAdES_detached
+						: DigitalSignatureField.SubFilterType.e_adbe_pkcs7_detached,
+				7500); // For security reasons, set the contents size to a value greater than but as
+						// close as possible to the size you expect your final signature to be, in
+						// bytes.
+						// ... or, if you want to apply a certification signature, use
+						// CreateSigDictForCustomCertification instead.
 
-		// (OPTIONAL) Set the signing time in the signature dictionary, if no secure embedded timestamping support is available from your signing provider.
+		// (OPTIONAL) Set the signing time in the signature dictionary, if no secure
+		// embedded timestamping support is available from your signing provider.
 		Date current_date = new Date();
 		current_date.setCurrentTime();
 		digsig_field.setSigDictTimeOfSigning(current_date);
 
 		doc.save(output_path, SDFDoc.SaveMode.INCREMENTAL, null);
 
-		// Digest the relevant bytes of the document in accordance with ByteRanges surrounding the signature.
+		// Digest the relevant bytes of the document in accordance with ByteRanges
+		// surrounding the signature.
 		byte[] pdf_digest = digsig_field.calculateDigest(digest_algorithm_type);
 
 		X509Certificate signer_cert = new X509Certificate(public_key_file_path);
 
-		// Optionally, you can add a custom signed attribute at this point, such as one of the PAdES ESS attributes.
-		// The function we provide takes care of generating the correct PAdES ESS attribute depending on your digest algorithm.
-		byte[] pades_versioned_ess_signing_cert_attribute = DigitalSignatureField.generateESSSigningCertPAdESAttribute(signer_cert, digest_algorithm_type);
+		// Optionally, you can add a custom signed attribute at this point, such as one
+		// of the PAdES ESS attributes.
+		// The function we provide takes care of generating the correct PAdES ESS
+		// attribute depending on your digest algorithm.
+		byte[] pades_versioned_ess_signing_cert_attribute = DigitalSignatureField
+				.generateESSSigningCertPAdESAttribute(signer_cert, digest_algorithm_type);
 
-		// Generate the signedAttrs component of CMS, passing any optional custom signedAttrs (e.g. PAdES ESS).
-		// The signedAttrs are certain attributes that become protected by their inclusion in the signature.
-		byte[] signedAttrs = DigitalSignatureField.generateCMSSignedAttributes(pdf_digest, pades_versioned_ess_signing_cert_attribute);
+		// Generate the signedAttrs component of CMS, passing any optional custom
+		// signedAttrs (e.g. PAdES ESS).
+		// The signedAttrs are certain attributes that become protected by their
+		// inclusion in the signature.
+		byte[] signedAttrs = DigitalSignatureField.generateCMSSignedAttributes(pdf_digest,
+				pades_versioned_ess_signing_cert_attribute);
 
 		// Calculate the digest of the signedAttrs (i.e. not the PDF digest, this time).
 		byte[] signedAttrs_digest = DigestAlgorithm.calculateDigest(digest_algorithm_type, signedAttrs);
 
-		//////////////////////////// custom digest signing starts ////////////////////////////
-		// At this point, you can sign the digest (for example, with HSM). We use our own SignDigest function instead here as an example,
-		// which you can also use for your purposes if necessary as an alternative to the handler/callback APIs (i.e. Certify/SignOnNextSave).
+		//////////////////////////// custom digest signing starts
+		//////////////////////////// ////////////////////////////
+		// At this point, you can sign the digest (for example, with HSM). We use our
+		//////////////////////////// own SignDigest function instead here as an example,
+		// which you can also use for your purposes if necessary as an alternative to
+		//////////////////////////// the handler/callback APIs (i.e.
+		//////////////////////////// Certify/SignOnNextSave).
 		byte[] signature_value = DigestAlgorithm.signDigest(
-			signedAttrs_digest,
-			digest_algorithm_type,
-			private_key_file_path,
-			keyfile_password);
-		//////////////////////////// custom digest signing ends //////////////////////////////
+				signedAttrs_digest,
+				digest_algorithm_type,
+				private_key_file_path,
+				keyfile_password);
+		//////////////////////////// custom digest signing ends
+		//////////////////////////// //////////////////////////////
 
 		// Then, load all your chain certificates into a container of X509Certificate.
 		X509Certificate[] chain_certs = {};
 
 		// Then, create ObjectIdentifiers for the algorithms you have used.
-		// Here we use digest_algorithm_type (usually SHA256) for hashing, and RSAES-PKCS1-v1_5 (specified in the private key) for signing.
+		// Here we use digest_algorithm_type (usually SHA256) for hashing, and
+		// RSAES-PKCS1-v1_5 (specified in the private key) for signing.
 		ObjectIdentifier digest_algorithm_oid = new ObjectIdentifier(digest_algorithm_type);
-		ObjectIdentifier signature_algorithm_oid = new ObjectIdentifier(ObjectIdentifier.Predefined.RSA_encryption_PKCS1);
+		ObjectIdentifier signature_algorithm_oid = new ObjectIdentifier(
+				ObjectIdentifier.Predefined.RSA_encryption_PKCS1);
 
 		// Then, put the CMS signature components together.
 		byte[] cms_signature = DigitalSignatureField.generateCMSSignature(
-			signer_cert, chain_certs, digest_algorithm_oid, signature_algorithm_oid,
-			signature_value, signedAttrs);
+				signer_cert, chain_certs, digest_algorithm_oid, signature_algorithm_oid,
+				signature_value, signedAttrs);
 
 		// Write the signature to the document.
 		doc.saveCustomSignature(cms_signature, digsig_field, output_path);
@@ -611,28 +624,42 @@ public class DigitalSignaturesTest
 	}
 
 	public static boolean timestampAndEnableLTV(String doc_path,
-		String tsa_url,
-		String trusted_cert_path, 
-		String appearance_img_path,
-		String output_path) throws PDFNetException
-	{
-		PDFDoc doc = new PDFDoc(doc_path); 
-		DigitalSignatureField doctimestamp_signature_field = doc.createDigitalSignatureField();  
+			String tsa_url,
+			String trusted_cert_path,
+			String appearance_img_path,
+			String output_path) throws PDFNetException {
+		PDFDoc doc = new PDFDoc(doc_path);
+		DigitalSignatureField doctimestamp_signature_field = doc.createDigitalSignatureField();
 		TimestampingConfiguration tst_config = new TimestampingConfiguration(tsa_url);
-		VerificationOptions opts = new VerificationOptions(VerificationOptions.SecurityLevel.e_compatibility_and_archiving); 
-		/* It is necessary to add to the VerificationOptions a trusted root certificate corresponding to 
-		the chain used by the timestamp authority to sign the timestamp token, in order for the timestamp
-		response to be verifiable during DocTimeStamp signing. It is also necessary in the context of this 
-		function to do this for the later LTV section, because one needs to be able to verify the DocTimeStamp 
-		in order to enable LTV for it, and we re-use the VerificationOptions opts object in that part. */
+		VerificationOptions opts = new VerificationOptions(
+				VerificationOptions.SecurityLevel.e_compatibility_and_archiving);
+		/*
+		 * It is necessary to add to the VerificationOptions a trusted root certificate
+		 * corresponding to
+		 * the chain used by the timestamp authority to sign the timestamp token, in
+		 * order for the timestamp
+		 * response to be verifiable during DocTimeStamp signing. It is also necessary
+		 * in the context of this
+		 * function to do this for the later LTV section, because one needs to be able
+		 * to verify the DocTimeStamp
+		 * in order to enable LTV for it, and we re-use the VerificationOptions opts
+		 * object in that part.
+		 */
 		opts.addTrustedCertificate(trusted_cert_path);
-		/* By default, we only check online for revocation of certificates using the newer and lighter 
-		OCSP protocol as opposed to CRL, due to lower resource usage and greater reliability. However, 
-		it may be necessary to enable online CRL revocation checking in order to verify some timestamps
-		(i.e. those that do not have an OCSP responder URL for all non-trusted certificates). */
+		/*
+		 * By default, we only check online for revocation of certificates using the
+		 * newer and lighter
+		 * OCSP protocol as opposed to CRL, due to lower resource usage and greater
+		 * reliability. However,
+		 * it may be necessary to enable online CRL revocation checking in order to
+		 * verify some timestamps
+		 * (i.e. those that do not have an OCSP responder URL for all non-trusted
+		 * certificates).
+		 */
 		opts.enableOnlineCRLRevocationChecking(true);
 
-		SignatureWidget widgetAnnot = SignatureWidget.create(doc, new Rect(0, 100, 200, 150), doctimestamp_signature_field);
+		SignatureWidget widgetAnnot = SignatureWidget.create(doc, new Rect(0, 100, 200, 150),
+				doctimestamp_signature_field);
 		doc.getPage(1).annotPushBack(widgetAnnot);
 
 		// (OPTIONAL) Add an appearance to the signature field.
@@ -641,19 +668,16 @@ public class DigitalSignaturesTest
 
 		System.out.println("Testing timestamping configuration.");
 		TimestampingResult config_result = tst_config.testConfiguration(opts);
-		if (config_result.getStatus())
-		{
+		if (config_result.getStatus()) {
 			System.out.println("Success: timestamping configuration usable. Attempting to timestamp.");
-		}
-		else
-		{
+		} else {
 			// Print details of timestamping failure.
 			System.out.println(config_result.getString());
-			if (config_result.hasResponseVerificationResult())
-			{
+			if (config_result.hasResponseVerificationResult()) {
 				EmbeddedTimestampVerificationResult tst_result = config_result.getResponseVerificationResult();
 				System.out.println(String.format("CMS digest status: %s", tst_result.getCMSDigestStatusAsString()));
-				System.out.println(String.format("Message digest status: %s", tst_result.getMessageImprintDigestStatusAsString()));
+				System.out.println(
+						String.format("Message digest status: %s", tst_result.getMessageImprintDigestStatusAsString()));
 				System.out.println(String.format("Trust status: %s", tst_result.getTrustStatusAsString()));
 			}
 			return false;
@@ -668,8 +692,7 @@ public class DigitalSignaturesTest
 
 		// Add LTV information for timestamp signature to document.
 		VerificationResult timestamp_verification_result = doctimestamp_signature_field.verify(opts);
-		if (!doctimestamp_signature_field.enableLTVOfflineVerification(timestamp_verification_result))
-		{
+		if (!doctimestamp_signature_field.enableLTVOfflineVerification(timestamp_verification_result)) {
 			System.out.println("Could not enable LTV for DocTimeStamp.");
 			return false;
 		}
@@ -678,192 +701,357 @@ public class DigitalSignaturesTest
 
 		return true;
 	}
-	
-	public static void main(String[] args) 
-	{
+
+	// DOES NOT FORM PART OF ORIGINAL SAMPLES:
+	public static void runTest1InBulk(
+			String certFieldName,
+			String privateKeyFilePath,
+			String keyfilePassword,
+			String appearanceImagePath,
+			List<InputOutputPair> ioPairs) throws InterruptedException {
+		// Assumes PDFNet.initialize(...) has already been called in main.
+		ExecutorService executor = Executors.newFixedThreadPool(
+				Math.min(ioPairs.size(), Runtime.getRuntime().availableProcessors()));
+		List<Callable<Boolean>> tasks = new ArrayList<>();
+		for (InputOutputPair pair : ioPairs) {
+			tasks.add(() -> {
+				try {
+					certifyPDF(
+							pair.inputPath,
+							certFieldName,
+							privateKeyFilePath,
+							keyfilePassword,
+							appearanceImagePath,
+							pair.outputPath);
+					printSignaturesInfo(pair.outputPath);
+					return true;
+				} catch (Exception e) {
+					System.err.println("Test1 failed for: " + pair.inputPath);
+					e.printStackTrace(System.err);
+					return false;
+				}
+			});
+		}
+		List<Future<Boolean>> results = executor.invokeAll(tasks);
+		executor.shutdown();
+		boolean allOk = true;
+		for (Future<Boolean> f : results) {
+			try {
+				if (!f.get()) {
+					allOk = false;
+				}
+			} catch (ExecutionException ee) {
+				allOk = false;
+				ee.getCause().printStackTrace(System.err);
+			}
+		}
+		if (!allOk) {
+			System.out.println("runTest1InBulk: at least one job failed.");
+		} else {
+			System.out.println("runTest1InBulk: all jobs completed successfully.");
+		}
+	}
+
+	// DOES NOT FORM PART OF ORIGINAL SAMPLES:
+	public static void runTest6InBulk(
+			String certFieldName,
+			String privateKeyFilePath,
+			String keyfilePassword,
+			String publicKeyFilePath,
+			String appearanceImagePath,
+			DigestAlgorithm digestAlgorithmType,
+			boolean padesSigningMode,
+			List<InputOutputPair> ioPairs) throws InterruptedException {
+
+		// Assumes PDFNet.initialize(...) has already been called in main.
+		ExecutorService executor = Executors.newFixedThreadPool(
+				Math.min(ioPairs.size(), Runtime.getRuntime().availableProcessors()));
+		List<Callable<Boolean>> tasks = new ArrayList<>();
+
+		for (InputOutputPair pair : ioPairs) {
+			tasks.add(() -> {
+				try {
+					CustomSigningAPI(
+							pair.inputPath,
+							certFieldName,
+							privateKeyFilePath,
+							keyfilePassword,
+							publicKeyFilePath,
+							appearanceImagePath,
+							digestAlgorithmType,
+							padesSigningMode,
+							pair.outputPath);
+					return true;
+				} catch (Exception e) {
+					System.err.println("Test6 failed for: " + pair.inputPath);
+					e.printStackTrace(System.err);
+					return false;
+				}
+			});
+		}
+
+		List<Future<Boolean>> results = executor.invokeAll(tasks);
+		executor.shutdown();
+
+		boolean allOk = true;
+		for (Future<Boolean> f : results) {
+			try {
+				if (!f.get()) {
+					allOk = false;
+				}
+			} catch (ExecutionException ee) {
+				allOk = false;
+				ee.getCause().printStackTrace(System.err);
+			}
+		}
+
+		if (!allOk) {
+			System.out.println("runTest6InBulk: at least one job failed.");
+		} else {
+			System.out.println("runTest6InBulk: all jobs completed successfully.");
+		}
+	}
+
+	public static class InputOutputPair {
+		public final String inputPath;
+		public final String outputPath;
+
+		public InputOutputPair(String inputPath, String outputPath) {
+			this.inputPath = inputPath;
+			this.outputPath = outputPath;
+		}
+	}
+
+	public static void main(String[] args) {
 		// Initialize PDFNet
 		PDFNet.initialize(PDFTronLicense.Key());
-		
+
 		boolean result = true;
 		String input_path = "../../TestFiles/";
 		String output_path = "../../TestFiles/Output/";
 
-
-		//////////////////// TEST 0: 
-		/* Create an approval signature field that we can sign after certifying.
-		(Must be done before calling CertifyOnNextSave/SignOnNextSave/WithCustomHandler.) */
-		try (PDFDoc doc = new PDFDoc(input_path + "waiver.pdf"))
-		{
+		//////////////////// TEST 0:
+		/*
+		 * Create an approval signature field that we can sign after certifying.
+		 * (Must be done before calling
+		 * CertifyOnNextSave/SignOnNextSave/WithCustomHandler.)
+		 */
+		try (PDFDoc doc = new PDFDoc(input_path + "waiver.pdf")) {
 			DigitalSignatureField approval_signature_field = doc.createDigitalSignatureField("PDFTronApprovalSig");
-			SignatureWidget widgetAnnotApproval = SignatureWidget.create(doc, new Rect(300, 287, 376, 306), approval_signature_field);
+			SignatureWidget widgetAnnotApproval = SignatureWidget.create(doc, new Rect(300, 287, 376, 306),
+					approval_signature_field);
 			Page page1 = doc.getPage(1);
 			page1.annotPushBack(widgetAnnotApproval);
 			doc.save(output_path + "waiver_withApprovalField_output.pdf", SDFDoc.SaveMode.REMOVE_UNUSED, null);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			e.printStackTrace(System.err);
 			result = false;
 		}
 
 		//////////////////// TEST 1: certify a PDF.
-		try
-		{
+		try {
 			certifyPDF(input_path + "waiver_withApprovalField.pdf",
-				"PDFTronCertificationSig",
-				input_path + "apryse.pfx",
-				"password",
-				input_path + "apryse.bmp",
-				output_path + "waiver_withApprovalField_certified_output.pdf");
+					"PDFTronCertificationSig",
+					input_path + "apryse.pfx",
+					"password",
+					input_path + "apryse.bmp",
+					output_path + "waiver_withApprovalField_certified_output.pdf");
 			printSignaturesInfo(output_path + "waiver_withApprovalField_certified_output.pdf");
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			e.printStackTrace(System.err);
 			result = false;
 		}
 
-		//////////////////// TEST 2: approval-sign an existing, unsigned signature field in a PDF that already has a certified signature field.
-		try
-		{
+		//////////////////// TEST 2: approval-sign an existing, unsigned signature field
+		//////////////////// in a PDF that already has a certified signature field.
+		try {
 			signPDF(input_path + "waiver_withApprovalField_certified.pdf",
-				"PDFTronApprovalSig",
-				input_path + "apryse.pfx",
-				"password",
-				input_path + "signature.jpg",
-				output_path + "waiver_withApprovalField_certified_approved_output.pdf");
+					"PDFTronApprovalSig",
+					input_path + "apryse.pfx",
+					"password",
+					input_path + "signature.jpg",
+					output_path + "waiver_withApprovalField_certified_approved_output.pdf");
 			printSignaturesInfo(output_path + "waiver_withApprovalField_certified_approved_output.pdf");
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			e.printStackTrace(System.err);
 			result = false;
 		}
 
-		//////////////////// TEST 3: Clear a certification from a document that is certified and has an approval signature.
-		try
-		{
+		//////////////////// TEST 3: Clear a certification from a document that is
+		//////////////////// certified and has an approval signature.
+		try {
 			clearSignature(input_path + "waiver_withApprovalField_certified_approved.pdf",
-				"PDFTronCertificationSig",
-				output_path + "waiver_withApprovalField_certified_approved_certcleared_output.pdf");
+					"PDFTronCertificationSig",
+					output_path + "waiver_withApprovalField_certified_approved_certcleared_output.pdf");
 			printSignaturesInfo(output_path + "waiver_withApprovalField_certified_approved_certcleared_output.pdf");
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			e.printStackTrace(System.err);
 			result = false;
 		}
-		
+
 		//////////////////// TEST 4: Verify a document's digital signatures.
-		try
-		{
+		try {
 			if (!verifyAllAndPrint(input_path + "waiver_withApprovalField_certified_approved.pdf",
-				input_path + "apryse.cer"))
-			{
+					input_path + "apryse.cer")) {
 				result = false;
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			e.printStackTrace(System.err);
 			result = false;
 		}
 
-		//////////////////// TEST 5: Verify a document's digital signatures in a simple fashion using the document API.
-		try
-		{
+		//////////////////// TEST 5: Verify a document's digital signatures in a simple
+		//////////////////// fashion using the document API.
+		try {
 			if (!verifySimple(input_path + "waiver_withApprovalField_certified_approved.pdf",
-				input_path + "apryse.cer"))
-			{
+					input_path + "apryse.cer")) {
 				result = false;
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			e.printStackTrace(System.err);
 			result = false;
 
 		}
-		
+
 		//////////////////// TEST 6: Custom signing API.
-		// The Apryse custom signing API is a set of APIs related to cryptographic digital signatures
-		// which allows users to customize the process of signing documents. Among other things, this
-		// includes the capability to allow for easy integration of PDF-specific signing-related operations
-		// with access to Hardware Security Module (HSM) tokens/devices, access to cloud keystores, access
+		// The Apryse custom signing API is a set of APIs related to cryptographic
+		//////////////////// digital signatures
+		// which allows users to customize the process of signing documents. Among other
+		//////////////////// things, this
+		// includes the capability to allow for easy integration of PDF-specific
+		//////////////////// signing-related operations
+		// with access to Hardware Security Module (HSM) tokens/devices, access to cloud
+		//////////////////// keystores, access
 		// to system keystores, etc.
-		try
-		{
+		try {
 			CustomSigningAPI(input_path + "waiver.pdf",
-				"PDFTronApprovalSig",
-				input_path + "apryse.pfx",
-				"password",
-				input_path + "apryse.cer",
-				input_path + "signature.jpg",
-				DigestAlgorithm.e_sha256,
-				true,
-				output_path + "waiver_custom_signed.pdf");
-		}
-		catch (Exception e)
-		{
+					"PDFTronApprovalSig",
+					input_path + "apryse.pfx",
+					"password",
+					input_path + "apryse.cer",
+					input_path + "signature.jpg",
+					DigestAlgorithm.e_sha256,
+					true,
+					output_path + "waiver_custom_signed.pdf");
+		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			e.printStackTrace(System.err);
 			result = false;
 		}
 
-		//////////////////// TEST 7: Timestamp a document, then add Long Term Validation (LTV) information for the DocTimeStamp.
+		//////////////////// TEST 7: Timestamp a document, then add Long Term Validation
+		//////////////////// (LTV) information for the DocTimeStamp.
 		// try
 		// {
-		// 	// Replace YOUR_URL_OF_TSA with the timestamp authority (TSA) URL to use during timestamping.
-		//     // For example, as of June 2025, http://timestamp.globalsign.com/tsa/r6advanced1 was usable.
-		//     // Note that this url may not work in the future. A reliable solution requires using your own TSA.
-		// 	String tsa_url = "YOUR_URL_OF_TSA";
-		// 	if (tsa_url == "YOUR_URL_OF_TSA")
-		// 	{
-		// 		throw new Exception("Error: The URL of your timestamp authority was not specified.");
-		// 	}
+		// // Replace YOUR_URL_OF_TSA with the timestamp authority (TSA) URL to use
+		//////////////////// during timestamping.
+		// // For example, as of June 2025,
+		//////////////////// http://timestamp.globalsign.com/tsa/r6advanced1 was usable.
+		// // Note that this url may not work in the future. A reliable solution
+		//////////////////// requires using your own TSA.
+		// String tsa_url = "YOUR_URL_OF_TSA";
+		// if (tsa_url == "YOUR_URL_OF_TSA")
+		// {
+		// throw new Exception("Error: The URL of your timestamp authority was not
+		//////////////////// specified.");
+		// }
 		//
-		// 	// Replace YOUR_CERTIFICATE with the trusted root certificate corresponding to the chain used by the timestamp authority.
-		//     // For example, as of June 2025, https://secure.globalsign.net/cacert/root-r6.crt was usable.
-		//     // Note that this certificate may not work in the future. A reliable solution requires using your own TSA certificate.
-		// 	String trusted_cert_path = "YOUR_CERTIFICATE";
-		// 	if (trusted_cert_path == "YOUR_CERTIFICATE")
-		// 	{
-		// 		throw new Exception("Error: The path to your timestamp authority trusted root certificate was not specified.");
-		// 	}
+		// // Replace YOUR_CERTIFICATE with the trusted root certificate corresponding
+		//////////////////// to the chain used by the timestamp authority.
+		// // For example, as of June 2025,
+		//////////////////// https://secure.globalsign.net/cacert/root-r6.crt was
+		//////////////////// usable.
+		// // Note that this certificate may not work in the future. A reliable solution
+		//////////////////// requires using your own TSA certificate.
+		// String trusted_cert_path = "YOUR_CERTIFICATE";
+		// if (trusted_cert_path == "YOUR_CERTIFICATE")
+		// {
+		// throw new Exception("Error: The path to your timestamp authority trusted root
+		//////////////////// certificate was not specified.");
+		// }
 		//
-		// 	if (!timestampAndEnableLTV(input_path + "waiver.pdf",
-		// 	tsa_url,
-		// 	trusted_cert_path,
-		// 	input_path + "signature.jpg",
-		// 	output_path+ "waiver_DocTimeStamp_LTV.pdf"))
-		// 	{
-		// 		result = false;
-		// 	}
+		// if (!timestampAndEnableLTV(input_path + "waiver.pdf",
+		// tsa_url,
+		// trusted_cert_path,
+		// input_path + "signature.jpg",
+		// output_path+ "waiver_DocTimeStamp_LTV.pdf"))
+		// {
+		// result = false;
+		// }
 		// }
 		// catch (Exception e)
 		// {
-		// 	System.err.println(e.getMessage());
-		// 	e.printStackTrace(System.err);
-		// 	result = false;
+		// System.err.println(e.getMessage());
+		// e.printStackTrace(System.err);
+		// result = false;
 		//
 		// }
 
+		//////////////////// TEST 8: Batch testing, not from original samples
+		//////////////////// ////////////////////
+		try {
+			List<DigitalSignaturesTest.InputOutputPair> ioPairs = Arrays.asList(
+					new DigitalSignaturesTest.InputOutputPair(
+							input_path + "test_bulk_signature_input_1.pdf",
+							output_path + "test_1_bulk_signature_output_1.pdf"),
+					new DigitalSignaturesTest.InputOutputPair(
+							input_path + "test_bulk_signature_input_2.pdf",
+							output_path + "test_1_bulk_signature_output_2.pdf"));
+			DigitalSignaturesTest.runTest1InBulk(
+					"PDFTronCertificationSig",
+					input_path + "apryse.pfx",
+					"password",
+					input_path + "apryse.bmp",
+					ioPairs);
+
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			e.printStackTrace(System.err);
+			result = false;
+
+		}
+
+		        //////////////////// TEST 9: Batch CustomSigningAPI (bulk Test 6) ////////////////////
+        try {
+            List<DigitalSignaturesTest.InputOutputPair> ioPairs6 = Arrays.asList(
+                    new DigitalSignaturesTest.InputOutputPair(
+                            input_path + "test_bulk_signature_input_1.pdf",
+                            output_path + "test_6_bulk_signature_output_1.pdf"),
+                    new DigitalSignaturesTest.InputOutputPair(
+                            input_path + "test_bulk_signature_input_2.pdf",
+                            output_path + "test_6_bulk_signature_output_2.pdf")
+                    // add more as needed
+            );
+
+            DigitalSignaturesTest.runTest6InBulk(
+                    "PDFTronApprovalSig",
+                    input_path + "apryse.pfx",
+                    "password",
+                    input_path + "apryse.cer",
+                    input_path + "signature.jpg",
+                    DigestAlgorithm.e_sha256,
+                    true,
+                    ioPairs6);
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            e.printStackTrace(System.err);
+            result = false;
+        }
+
 		//////////////////// End of tests. ////////////////////
 
-		if (result)
-		{
+		if (result) {
 			System.out.println("Tests successful.\n==========");
-		}
-		else
-		{
+		} else {
 			System.out.println("Tests FAILED!!!\n==========");
 		}
-		PDFNet.terminate();		
+		PDFNet.terminate();
 	}
 }

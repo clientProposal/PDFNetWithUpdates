@@ -10,8 +10,8 @@
 
 5. With your OS selected, download the ICR module under "Modules" from the [Apryse Downloads page](https://dev.apryse.com/). 
 
-6. Move the directory from the ICR module "HandwritingICR" (should be at HandwritingICRModuleMac/Samples/TestFiles/HandwritingICR
-) to the subdirectory of the Java directory, you should end up with it at Samples/TestFiles/HandwritingICR. 
+6. Move the directory "HandwritingICR" from the ICR module (should be at HandwritingICRModuleMac/Samples/TestFiles/HandwritingICR
+) to the subdirectory of the Java directory, you should end up with it at Samples/TestFiles/HandwritingICR/icr.pdf. 
 
 7. Navigate to Samples/HandwritingICRTest/JAVA of the Java directory and run the code. 
 
@@ -87,6 +87,16 @@ _Can then be embedded into PDF:_
 ```java 
 doc.saveCustomSignature(cms_signature, digsig_field, output_path);
 ```
+
+3. See [runTest1InBulk](Samples/DigitalSignaturesTest/JAVA/DigitalSignaturesTest.java#L706), suggestion for bulk signing.
+
+Used in main [here](Samples/DigitalSignaturesTest/JAVA/DigitalSignaturesTest.java#L997).
+
+See [runTest6InBulk](Samples/DigitalSignaturesTest/JAVA/DigitalSignaturesTest.java#L756), suggestion for bulk custom signing.
+
+Used in main [here](Samples/DigitalSignaturesTest/JAVA/DigitalSignaturesTest.java#L1020).
+
+
 
 
 
