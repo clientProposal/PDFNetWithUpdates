@@ -45,3 +45,17 @@ Download Structured Output Module on the [Apryse Downloads page](https://dev.apr
 ## WebViewer Multiviewer Improvements
 
 [See alternative repo](https://github.com/clientProposal/testMultiViewerFromUpdates).
+
+
+## Digital Signing
+
+Nothing new here, just recording points about some samples for reference. 
+
+See [here](Samples/DigitalSignaturesTest/JAVA/DigitalSignaturesTest.java#L470)
+
+e_ETSI_RFC3161: This field is used to check whether the digital signature field has been signed, but it is actually in reference to the timestamp.
+
+This section shows us how to get back the MDP, as described in 12.8.2.2 of PDF Standard
+
+
+

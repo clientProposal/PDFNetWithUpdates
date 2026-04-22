@@ -134,6 +134,24 @@ public class DigitalSignaturesTest
 		opts.addTrustedCertificate(in_public_key_file_path, 
 			VerificationOptions.CertificateTrustFlag.e_default_trust.value | VerificationOptions.CertificateTrustFlag.e_certification_trust.value);
 
+			// ** From Documentation **
+			// void addTrustedCertificate(String in_filepath, long in_trust_flags)
+			// Adds a certificate to the store of trusted certificates inside this options object, by loading it from a file.
+
+			// Parameters
+			// in_filepath	-- a path to a file containing the data of an X.509 public-key certificate encoded in binary DER (Distinguished Encoding Rules) format, or in PEM (appropriate Privacy-Enhanced Mail header+Base64 encoded DER+appropriate footer) format
+			// in_trust_flags	-- a combination of trust flags (see enum CertificateTrustFlag) that determine for which situations this certificate should be trusted during trust verification.
+			// Throws
+			// PDFNetException	
+
+			// flags, indicates valid for bitwise OR operation
+			// VerificationOptions.CertificateTrustFlag.e_default_trust.value
+			// 97
+			// VerificationOptions.CertificateTrustFlag.e_certification_trust.value
+			// 2
+			// 1100001 | 0000010 = 1100011, or 99
+			
+
 		// Iterate over the signatures and verify all of them.
 		DigitalSignatureFieldIterator digsig_fitr = doc.getDigitalSignatureFieldIterator();
 		boolean verification_status = true;
@@ -449,7 +467,7 @@ public class DigitalSignaturesTest
 			DigitalSignatureField.SubFilterType subfilter = digsigfield.getSubFilter();
 
 			System.out.println("Subfilter type: " + subfilter.ordinal());
-
+			// e_ETSI_RFC3161 is the timestamp field. If it is present, we know that the field was signed. 
 			if (subfilter != DigitalSignatureField.SubFilterType.e_ETSI_RFC3161)
 			{
 				System.out.println("Signature's signer: " + digsigfield.getSignatureName());
