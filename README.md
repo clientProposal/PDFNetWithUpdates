@@ -82,5 +82,4 @@ Apryse is an SDK. For questions on certificates, storage, etcetera, please refer
 
 iText is one of Apryse company's flagship products, though the iText and Apryse SDKs are different.
 
-
-Older notes on digital signatures [here](Notes/notesDigitalSigningSample.md);
+Older notes on digital signatures [here](Notes/notesDigitalSigningSample.md) as reference
